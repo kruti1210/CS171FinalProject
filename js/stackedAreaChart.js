@@ -1,14 +1,13 @@
-
-
 /*
  * StackedAreaChart - Object constructor function
  * @param _parentElement 	-- the HTML element in which to draw the visualization
  * @param _data						-- the  
  */
 
-StackedAreaChart = function(_parentElement, _data){
+StackedAreaChart = function(_parentElement, _data, _keys){
 	this.parentElement = _parentElement;
   this.data = _data;
+    this.keys = _keys;
   this.displayData = []; // see data wrangling
 
   // DEBUG RAW DATA
@@ -30,7 +29,8 @@ StackedAreaChart.prototype.initVis = function(){
 	vis.width = 800 - vis.margin.left - vis.margin.right,
   vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
-
+    vis.colorScale = d3.scale.category20();
+    vis.colorScale.domain(vis.keys);
   // SVG drawing area
 	vis.svg = d3.select("#" + vis.parentElement).append("svg")
 	    .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -70,7 +70,7 @@ StackedAreaChart.prototype.initVis = function(){
 
 	// TO-DO: Initialize stack layout
 
-	var dataCategories = colorScale.domain();
+	var dataCategories = vis.colorScale.domain();
     console.log(dataCategories);
 	var transposedData = dataCategories.map(function(name) {
 		return {
@@ -150,11 +150,16 @@ StackedAreaChart.prototype.updateVis = function(){
     }).on("mouseout", function(d){
       categories.selectAll('.typename')
           .text('')
+  }).on("click", function(d){
+      if(general_keys.includes(d.name)){
+          document.getElementById('stacked-area-chart-sub').innerHTML = "";
+          subchart = new StackedAreaChart("stacked-area-chart-sub",allData,all_keys[d.name]);
+      }
   });
 
   categories
   		.style("fill", function(d) { 
-  			return colorScale(d.name);
+  			return vis.colorScale(d.name);
   		})
       .attr("d", function(d) {
 				return vis.area(d.values);
