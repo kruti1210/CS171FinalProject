@@ -1,14 +1,17 @@
+
+
 /*
  * StackedAreaChart - Object constructor function
  * @param _parentElement 	-- the HTML element in which to draw the visualization
  * @param _data						-- the  
  */
 
-StackedAreaChart = function(_parentElement, _data, _keys){
+StackedAreaChart = function(_parentElement, _data, _keys,_colorScale){
 	this.parentElement = _parentElement;
   this.data = _data;
     this.keys = _keys;
   this.displayData = []; // see data wrangling
+	this.colorScale = _colorScale;
 
   // DEBUG RAW DATA
 
@@ -29,7 +32,6 @@ StackedAreaChart.prototype.initVis = function(){
 	vis.width = 800 - vis.margin.left - vis.margin.right,
   vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
-    vis.colorScale = d3.scale.category20();
     vis.colorScale.domain(vis.keys);
   // SVG drawing area
 	vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -153,7 +155,7 @@ StackedAreaChart.prototype.updateVis = function(){
   }).on("click", function(d){
       if(general_keys.includes(d.name)){
           document.getElementById('stacked-area-chart-sub').innerHTML = "";
-          subchart = new StackedAreaChart("stacked-area-chart-sub",allData,all_keys[d.name]);
+          subchart = new StackedAreaChart("stacked-area-chart-sub",allData,all_keys[d.name],d3.scale.category20c());
       }
   });
 
