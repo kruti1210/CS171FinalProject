@@ -24,5 +24,5 @@ d3.csv("data/nhe2014.csv", function(data) {
             d[d_1['Expenditure Amount (Millions)'].trim()] = +d_1[d.Year].replaceAll(',','')||0
         })
     });
-    areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys);
+    areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys,d3.scale.category10());
 });
