@@ -1,9 +1,74 @@
 body {
     background-color: #f0eceb;
 }
+
+/*
+Briefly commenting these out until I can figure out how to not have them interfere with other css
 h1 {
     font: 15px arial, sans-serif;
 }
 div {
     font:italic bold 12px/30px Georgia, serif;
 }
+*/
+
+/** New styles added here **/
+
+.container {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bucket-title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#main-title {
+    font-weight: 100;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.main-header {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+#img1-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #e1e8f0;
+    opacity: .7;
+}
+
+
+.quote {
+    font-family: 'Shrikhand', cursive;
+    position: absolute;
+    top: 60px;
+    left: 220px;
+    width: 60%;
+}
+
+a:link {
+    color: grey;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: lightgrey;
+}
+
+/**
+Code help for top banner image from: http://stackoverflow.com/questions/18423004/html-css-creating-a-banner-header
+Code help for positioning text over image from: https://css-tricks.com/text-blocks-over-image/
+**/
+
+.source {
+    text-align: center;
+
