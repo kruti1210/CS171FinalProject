@@ -1,16 +1,114 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>D3 Project</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<title>Health Inequalities in America</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,400italic,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<div id="stacked-area-chart"></div>
-<div id="stacked-area-chart-sub"></div>
-<script src="js/d3.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/stackedAreaChart.js"></script>
+	<h1 id="main-title"> Contextualizing American Health Inequality</h1>
+
+	<nav class="navbar navbar-fixed-top">
+	</nav>
+
+	<div class = "container">
+		<div class="row">
+			<header class="main-header" role="banner">
+				<div id="img1-placeholder"></div>
+				<h2 class="quote">“If you’re born a black man in, let’s say,
+					New Orleans Parish, your average life expectancy
+					is worse than the male average of countries that
+					are much poorer than America.”</h2>
+			</header>
+			<p class="source">
+				<a href="http://www.aim-na.org/committees.html">Image Source</a>
+				<a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Quote Source</a>
+			</p>
+		</div>
+
+		<div class="row bucket-title">
+			<h3>Bucket 1 Title</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<p>Visualization 3 of Life Expectancy across the world</p>
+			</div>
+
+			<div class="col-md-4">
+				<p>Text describing US in world context to accompany Visualization 3</p>
+			</div>
+
+			<div class="col-md-4">
+				<p> Text describing Bucket 1</p>
+			</div>
+		</div>
+
+		<div class = "row">
+			<p> More visualizations relevant to Bucket 1 </p>
+		</div>
+
+		<div class = "row bucket-title">
+			<h3>Bucket 2 Title</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<p>Text describing Bucket 2</p>
+			</div>
+
+			<div class="col-md-6">
+				<p>Image relevant to Bucket 2</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<p>Visualization 1 of Physicians per population by state</p>
+			</div>
+
+			<div class="col-md-6">
+				<p>Visualization ## showing consequences of poor medical care and accessibility</p>
+			</div>
+
+			<div class="col-md-2">
+				<p>Quote explaining core concept of Bucket 2</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<p>Striking quote and image about healthcare spending</p>
+		</div>
+
+		<div class="row bucket-title">
+			<h3>Bucket 3 Title </h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<p>Intro text to 3rd Bucket</p>
+				<p>Striking quote about spending</p>
+			</div>
+
+			<div class="col-md-9">
+				<p>Visualization 2 of timeline of Healthcare Spending</p>
+				<div id="stacked-area-chart"></div>
+				<div id="stacked-area-chart-sub"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/d3.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/stackedAreaChart.js"></script>
 </body>
+
 </html>
+
