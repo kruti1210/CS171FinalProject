@@ -161,7 +161,8 @@ StackedAreaChart.prototype.updateVis = function(){
   
   categories.enter().append("path")
       .attr("class", "area")
-	  .on("mouseover", function(){return vis.tooltip.style("visibility", "visible");})
+	  .on("mouseover", function(){console.log('hi');
+	  return vis.tooltip.style("visibility", "visible");})
 	  .on('mousemove',function(d){return vis.tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
 	  .on("mouseout", function(d) {
 		  return vis.tooltip.style("visibility", "hidden")
