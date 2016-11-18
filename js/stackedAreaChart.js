@@ -54,10 +54,12 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
 	vis.width = 800 - vis.margin.left - vis.margin.right,
   vis.height = 350 - vis.margin.top - vis.margin.bottom;
 	//Tooltip from http://bl.ocks.org/d3noob/c37cb8e630aaef7df30d
-	vis.div = d3.select("body")
-		.append("div")  // declare the tooltip div
-		.attr("class", "tooltip")              // apply the 'tooltip' class
-		.style("opacity", 0);
+	var tooltip = d3.select("body")
+	.append("div")
+	.style("position", "absolute")
+	.style("z-index", "10")
+	.style("visibility", "hidden")
+	.text("a simple tooltip");
 
 
   // SVG drawing area
@@ -160,18 +162,11 @@ StackedAreaChart.prototype.updateVis = function(){
   categories.enter().append("path")
       .attr("class", "area")
 	  .on("mouseover", function(d) {
-		  vis.div.transition()
-			  .duration(500)
-			  .style("opacity", 0);
-		  vis.div.transition()
-			  .duration(200)
-			  .style("opacity", .9);
-		  vis.div.html(d.name)
-			  .style("left", (100) + "px")
-			  .style("top", (40) + "px");
-  })
+	  tooltip.text(d.name)
+	  return tooltip.style("visibility", "visible");}
+  }).on('mousemove',function(d){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
 	  .on("mouseout", function(d) {
-		  vis.div.html('')
+		  return tooltip.style("visibility", "hidden")
 	  }).on("click", function(d){
       if(general_keys.includes(d.name)){
           document.getElementById('stacked-area-chart-sub').innerHTML = "";
