@@ -98,6 +98,15 @@
 
 			<div class="col-md-9">
 				<p>Visualization 2 of timeline of Healthcare Spending</p>
+				<form class="filter" style = "float:right" onsubmit="return updateVisualization()">
+				    Start Year:
+				    <input type="text" id="start" value='1960'style = "width:100px">
+
+				    End Year:
+				    <input type="text" id="end" value="2014" style = "width:100px">
+
+				    <input type="submit" value="Filter">
+				</form>
 				<div id="stacked-area-chart"></div>
 				<div id="stacked-area-chart-sub"></div>
 			</div>
