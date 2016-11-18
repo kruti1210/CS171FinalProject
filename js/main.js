@@ -26,3 +26,12 @@ d3.csv("data/nhe2014.csv", function(data) {
     });
     areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys,d3.scale.category10());
 });
+function updateVisualization() {
+    console.log('hi')
+    var start_year = document.getElementById('start').value;
+    var end_year = document.getElementById('end').value;
+    areachart.initVis(start_year,end_year);
+    subchart.initVis(start_year,end_year);
+    return false;
+
+}
