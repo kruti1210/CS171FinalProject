@@ -163,7 +163,7 @@ StackedAreaChart.prototype.updateVis = function(){
       .attr("class", "area")
 	  .on("mouseover", function(d) {
 	  tooltip.text(d.name);
-	  return tooltip.style("visibility", "visible")}
+	  return tooltip.style("visibility", "visible")
   }).on('mousemove',function(d){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
 	  .on("mouseout", function(d) {
 		  return tooltip.style("visibility", "hidden")
