@@ -14,8 +14,10 @@ StackedAreaChart = function(_parentElement, _data, _keys,_colorScale){
 	this.colorScale = _colorScale;
 
   // DEBUG RAW DATA
+	var start_year = document.getElementById('start').value;
+	var end_year = document.getElementById('end').value;
 
-  this.initVis();
+  this.initVis(start_year,end_year);
 }
 
 
@@ -24,21 +26,48 @@ StackedAreaChart = function(_parentElement, _data, _keys,_colorScale){
  * Initialize visualization (static content, e.g. SVG area or axes)
  */
 
-StackedAreaChart.prototype.initVis = function(){
+StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
+	console.log(this.parentElement);
+	document.getElementById(this.parentElement).innerHTML = "";
 	var vis = this;
+    vis.colorScale.domain(vis.keys);
+    var dataCategories = vis.colorScale.domain();
+	var selectedData = vis.data.filter(function(d){
+		return ((d.Year>=start_yr)&(d.Year<=end_yr))
+	})
+    console.log(selectedData);
+    var transposedData = dataCategories.map(function(name) {
+        return {
+            name: name,
+            values: selectedData.map(function(d) {
+                return {Year: d.Year, y: d[name]};
+            })
+        };
+    });
+    console.log(transposedData);
+    var stack = d3.layout.stack()
+        .values(function(d) { return d.values; });
+    vis.stackedData = stack(transposedData);
 
 	vis.margin = { top: 40, right: 0, bottom: 60, left: 80 };
 
 	vis.width = 800 - vis.margin.left - vis.margin.right,
   vis.height = 400 - vis.margin.top - vis.margin.bottom;
+	//Tooltip from http://bl.ocks.org/d3noob/c37cb8e630aaef7df30d
+	vis.div = d3.select("body")
+		.append("div")  // declare the tooltip div
+		.attr("class", "tooltip")              // apply the 'tooltip' class
+		.style("opacity", 0);
 
-    vis.colorScale.domain(vis.keys);
+
   // SVG drawing area
 	vis.svg = d3.select("#" + vis.parentElement).append("svg")
 	    .attr("width", vis.width + vis.margin.left + vis.margin.right)
 	    .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
 	  .append("g")
 	    .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+
+
     vis.svg.append("defs").append("clipPath")
         .attr("id", "clip")
         .append("rect")
@@ -50,14 +79,14 @@ StackedAreaChart.prototype.initVis = function(){
 	// Scales and axes
   vis.x = d3.scale.linear()
   	.range([0, vis.width])
-  	.domain(d3.extent(vis.data, function(d) { return d.Year; }));
+  	.domain([start_yr,end_yr]);
 
 	vis.y = d3.scale.linear()
 		.range([vis.height, 0]);
 
 	vis.xAxis = d3.svg.axis()
 		  .scale(vis.x)
-		  .orient("bottom");
+		  .orient("bottom").tickFormat(d3.format("d"));
 
 	vis.yAxis = d3.svg.axis()
 	    .scale(vis.y)
@@ -72,20 +101,7 @@ StackedAreaChart.prototype.initVis = function(){
 
 	// TO-DO: Initialize stack layout
 
-	var dataCategories = vis.colorScale.domain();
-    console.log(dataCategories);
-	var transposedData = dataCategories.map(function(name) {
-		return {
-			name: name,
-			values: vis.data.map(function(d) {
-				return {Year: d.Year, y: d[name]};
-			})
-		};
-	});
-    console.log(transposedData);
-    var stack = d3.layout.stack()
-        .values(function(d) { return d.values; });
-    vis.stackedData = stack(transposedData);
+
   // TO-DO: Stacked area layout
 	vis.area = d3.svg.area()
         .interpolate("cardinal")
@@ -96,9 +112,6 @@ StackedAreaChart.prototype.initVis = function(){
 
 
 	// TO-DO: Tooltip placeholder
-vis.svg.append('text')
-    .attr('class','typename');
-
 
 	// TO-DO: (Filter, aggregate, modify data)
 
@@ -146,13 +159,20 @@ StackedAreaChart.prototype.updateVis = function(){
   
   categories.enter().append("path")
       .attr("class", "area")
-  .on("mouseover", function(d){
-        vis.svg.selectAll('.typename')
-            .text(d.name)
-    }).on("mouseout", function(d){
-      categories.selectAll('.typename')
-          .text('')
-  }).on("click", function(d){
+	  .on("mouseover", function(d) {
+		  vis.div.transition()
+			  .duration(500)
+			  .style("opacity", 0);
+		  vis.div.transition()
+			  .duration(200)
+			  .style("opacity", .9);
+		  vis.div.html(d.name)
+			  .style("left", (100) + "px")
+			  .style("top", (40) + "px");
+  })
+	  .on("mouseout", function(d) {
+		  vis.div.html('')
+	  }).on("click", function(d){
       if(general_keys.includes(d.name)){
           document.getElementById('stacked-area-chart-sub').innerHTML = "";
           subchart = new StackedAreaChart("stacked-area-chart-sub",allData,all_keys[d.name],d3.scale.category20c());
