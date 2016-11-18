@@ -54,7 +54,7 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
 	vis.width = 800 - vis.margin.left - vis.margin.right,
   vis.height = 350 - vis.margin.top - vis.margin.bottom;
 	//Tooltip from http://bl.ocks.org/d3noob/c37cb8e630aaef7df30d
-	var tooltip = d3.select("body")
+	vis.tooltip = d3.select("body")
 	.append("div")
 	.style("position", "absolute")
 	.style("z-index", "10")
@@ -161,10 +161,10 @@ StackedAreaChart.prototype.updateVis = function(){
   
   categories.enter().append("path")
       .attr("class", "area")
-	  .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-	  .on('mousemove',function(d){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+	  .on("mouseover", function(){return vis.tooltip.style("visibility", "visible");})
+	  .on('mousemove',function(d){return vis.tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
 	  .on("mouseout", function(d) {
-		  return tooltip.style("visibility", "hidden")
+		  return vis.tooltip.style("visibility", "hidden")
 	  }).on("click", function(d){
       if(general_keys.includes(d.name)){
           document.getElementById('stacked-area-chart-sub').innerHTML = "";
