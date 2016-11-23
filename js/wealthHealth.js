@@ -2,7 +2,7 @@ var margin = {top: 20, right: 50, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-
+console.log('hi')
 var x = d3.scale.linear()
     .range([0, width]);
 
