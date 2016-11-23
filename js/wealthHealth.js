@@ -2,7 +2,6 @@ var margin = {top: 20, right: 50, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-console.log('hi')
 var x = d3.scale.linear()
     .range([0, width]);
 
@@ -23,7 +22,7 @@ var line = d3.svg.line()
 year = 2001;
 alldata = [];
 
-var svg = d3.select(".le_graph").append("svg")
+var svg = d3.select("#le_graph").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
