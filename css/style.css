@@ -111,8 +111,8 @@ Code for VIS 3: LE Choropleth
 div.tooltip {
     position: absolute;
     text-align: center;
-    width: 120px;
-    height: 30px;
+    width: 130px;
+    height: 40px;
     padding: 3px;
     font-size: 10px;
     font-family:'Raleway', sans-serif;
