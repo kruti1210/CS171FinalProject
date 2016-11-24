@@ -1,6 +1,6 @@
 /*
-Most of the choropleth implementation (the legend and accompanying text esp)
-taken from the midterm's implementation of a choropleth
+ Most of the choropleth implementation (the legend and accompanying text esp)
+ taken from the midterm's implementation of a choropleth
  */
 
 /*
@@ -15,7 +15,7 @@ var div = d3.select("#vis-3-placeholder").append("div")
 var width = 900,
     height = 600;
 
-var svg = d3.select("#vis-3-placeholder").append("svg")
+var svgLE = d3.select("#vis-3-placeholder").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -88,14 +88,14 @@ function createVisualization (error, data, data2, data3) {
 
     // Give names to country even if there is no life expectancy data
     world.forEach(function(d) {
-       if (!d.countryName) {
-           data3.forEach(function (dcc) {
-               var isoCode = parseFloat(dcc.imptcode);
-              if (d.id === isoCode) {
-                  d.countryName = dcc.Name;
-              }
-           });
-       }
+        if (!d.countryName) {
+            data3.forEach(function (dcc) {
+                var isoCode = parseFloat(dcc.imptcode);
+                if (d.id === isoCode) {
+                    d.countryName = dcc.Name;
+                }
+            });
+        }
     });
 
     color.domain([
@@ -104,7 +104,7 @@ function createVisualization (error, data, data2, data3) {
     ]);
 
     // Render the world atlas using path generator
-    var worldMap = svg.selectAll("path")
+    var worldMap = svgLE.selectAll("path")
         .data(world)
         .enter().append("path")
         .attr("d", path)
@@ -152,7 +152,7 @@ function createVisualization (error, data, data2, data3) {
     var ld_h = 20;
 
     // --> Legend cubes implementation
-    var legend = svg.selectAll("g.legend")
+    var legend = svgLE.selectAll("g.legend")
         .data(colorbrewer.Blues[colorBins]);
 
     legend.enter().append("g")
@@ -174,7 +174,7 @@ function createVisualization (error, data, data2, data3) {
 
     // --> Legend numbers implementation
 
-    var aText = svg.selectAll("text")
+    var aText = svgLE.selectAll("text")
         .data(color.range());
 
     aText.enter().append("text")
@@ -194,5 +194,3 @@ function createVisualization (error, data, data2, data3) {
 
 
 }
-
-
