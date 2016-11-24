@@ -1,5 +1,15 @@
 
-/* ADD YOUR STYLES HERE */
+/*
+Briefly commenting these out until I can figure out how to not have them interfere with other css
+h1 {
+    font: 15px arial, sans-serif;
+}
+div {
+    font:italic bold 12px/30px Georgia, serif;
+}
+*/
+
+/** New styles added here **/
 
 .container {
     font-family: 'Roboto', sans-serif;
@@ -61,6 +71,7 @@ Code help for positioning text over image from: https://css-tricks.com/text-bloc
 }
 
 #bucket1-placeholder,
+#vis3-placeholder,
 #text3-placeholder {
     height: 300px;
     background-color: #e1e8f0;
@@ -92,10 +103,10 @@ Code help for positioning text over image from: https://css-tricks.com/text-bloc
 }
 
 
-/* LE MAP CSS*/
 /*
 THIS CODE WAS TAKEN DIRECTLY FROM RUSSIA CHOROPLETH MAP
 AT: http://bl.ocks.org/KoGor/5685876
+Code for VIS 3: LE Choropleth
 */
 div.tooltip {
     position: absolute;
