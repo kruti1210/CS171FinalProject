@@ -103,4 +103,23 @@ Code help for positioning text over image from: https://css-tricks.com/text-bloc
 }
 
 
+/*
+THIS CODE WAS TAKEN DIRECTLY FROM RUSSIA CHOROPLETH MAP
+AT: http://bl.ocks.org/KoGor/5685876
+Code for VIS 3: LE Choropleth
+*/
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    padding: 3px;
+    font-size: 10px;
+    font-family:'Raleway', sans-serif;
+    background: floralwhite;
+    border: 1px;
+    pointer-events: none;
+}
+
+
 
