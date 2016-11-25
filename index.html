@@ -11,13 +11,26 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-	<h1 id="main-title"> Contextualizing American Health Inequality</h1>
+<!-- Taken from http://www.w3schools.com/bootstrap/bootstrap_scrollspy.asp -->
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-	<nav class="navbar navbar-fixed-top">
+
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<ul class="nav navbar-nav">
+			<li><a href="#introbucket">Intro</a></li>
+			<li><a href="#bucket1">Bucket 1</a></li>
+			<li><a href="#bucket2">Bucket 2</a></li>
+			<li><a href="#bucket3">Bucket 3</a></li>
+
+		</ul>
 	</nav>
 
 	<div class = "container">
+
+		<div id="introbucket">
+
+			<h1 id="main-title"> DR: Contextualizing American Health Inequality</h1>
+
 		<div class="row">
 			<header class="main-header" role="banner">
 				<div id="img1-placeholder"></div>
@@ -31,7 +44,9 @@
 				<a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Quote Source</a>
 			</p>
 		</div>
-
+		</div>
+		
+		<div id="bucket1">
 		<div class="row bucket-title">
 			<h3>Bucket 1 Title</h3>
 		</div>
@@ -55,7 +70,9 @@
 		<div class = "row">
 			<p id="bucket1-addl-placeholder"> More visualizations relevant to Bucket 1 </p>
 		</div>
+		</div>
 		
+		<div id="bucket2">
 		<div class = "row bucket-title">
 			<h3>Bucket 2 Title</h3>
 		</div>
@@ -83,7 +100,9 @@
 				<p>Quote explaining core concept of Bucket 2</p>
 			</div>
 		</div>
-
+		</div>
+		
+		<div id="bucket3">
 		<div class="row">
 			<p class="b3-placeholders">Striking quote and image about healthcare spending</p>
 		</div>
@@ -121,6 +140,7 @@
 				<div id='le_graph'></div>
 			</div>
 		</div>
+		</div>	
 
 	</div>
 
@@ -132,9 +152,7 @@
 	<script src="js/colorbrewer.js"></script>
 
 
-<script src="js/activity2.js"></script>
-	
-	
+	<script src="js/activity2.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/stackedAreaChart.js"></script>
 	<script src="js/wealthHealth.js"></script>
