@@ -25,7 +25,7 @@ d3.csv("data/nhe2014.csv", function(data) {
         })
     });
     areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys,d3.scale.category10());
-    console.log(subchart);
+    console.log(typeof subchart !='undefined');
 });
 function updateVisualization() {
     console.log('hi')
