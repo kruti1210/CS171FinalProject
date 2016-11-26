@@ -170,3 +170,12 @@ Color scheme from https://startbootstrap.com/template-overviews/scrolling-nav/*/
 .dot:hover {
     opacity: 0.8;
 }
+
+#scatter-x, #scatter-y {
+    width: 40%;
+    float: left;
+}
+
+.pop-label {
+    opacity: 0.5;
+}
