@@ -138,3 +138,31 @@ Color scheme from https://startbootstrap.com/template-overviews/scrolling-nav/*/
     color: #777777;
 }
 
+/* taken from lab 4 and http://bl.ocks.org/weiglemc/6185069*/
+
+.axis path,
+.axis line,
+.domain {
+    fill: none;
+    stroke: #888;
+    shape-rendering: crispEdges;
+}
+.axis-label {
+    fill: #888;
+    font-size: 10px;
+}
+
+.scatter-tooltip {
+    position: absolute;
+    width: 200px;
+    height: 28px;
+    pointer-events: none;
+}
+
+.scatter {
+    float: left;
+}
+
+.state {
+    font-weight: bold;
+}
