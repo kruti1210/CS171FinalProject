@@ -74,7 +74,7 @@
 		
 		<div id="bucket2">
 		<div class = "row bucket-title">
-			<h3>Accessing Health Care</h3>
+			<h3>Bucket 2 Title</h3>
 		</div>
 
 		<div class="row">
@@ -86,6 +86,18 @@
 				<p>Image relevant to Bucket 2</p>
 			</div>
 		</div>
+			<div class="select">
+				<select id="scatter-x" class="form-control" onchange="load()">
+					<option value="Active_Physicians">Select x-axis (Default: Active Physicians per 100,000 population)</option>
+					<option value="Hospital_Bed_Density">Hospital beds per 100,000 population</option>
+					<option value="Wait_Time">Average emergency room wait time</option>
+				</select>
+				<select id="scatter-y" class="form-control" onchange="load()">
+					<option value="Hospital_Bed_Density">Select y-axis (Default: Hospital beds per 100,000 population)</option>
+					<option value="Active_Physicians">Active physicians per 100,000 population</option>
+					<option value="Wait_Time">Average emergency room wait time</option>
+				</select>
+			</div>
 					<div class="scatter" id="scatterplot"></div>
 					<div class="scatter" id="details"></div>
 
