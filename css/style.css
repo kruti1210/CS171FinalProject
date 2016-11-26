@@ -166,3 +166,7 @@ Color scheme from https://startbootstrap.com/template-overviews/scrolling-nav/*/
 .state {
     font-weight: bold;
 }
+
+.dot:hover {
+    opacity: 0.8;
+}
