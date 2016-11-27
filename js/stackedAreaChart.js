@@ -49,7 +49,7 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
         .values(function(d) { return d.values; });
     vis.stackedData = stack(transposedData);
 
-	vis.margin = { top: 40, right: 0, bottom: 60, left: 80 };
+	vis.margin = { top: 40, right: 0, bottom: 40, left: 80 };
 
 	vis.width = 800 - vis.margin.left - vis.margin.right,
   vis.height = 350 - vis.margin.top - vis.margin.bottom;
