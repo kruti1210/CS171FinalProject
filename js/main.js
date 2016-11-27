@@ -12,8 +12,8 @@ var all_keys = {'Out of pocket':['Out of pocket'],'Health Insurance':
 };
 margin = { top: 40, right: 0, bottom: 60, left: 80 };
 
-width = 800 - vis.margin.left - vis.margin.right,
-height = 350 - vis.margin.top - vis.margin.bottom;
+width = 800 - margin.left - margin.right,
+height = 350 - margin.top - margin.bottom;
 svg = d3.select("#stacked-area-chart-sub").append("svg")
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
