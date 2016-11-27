@@ -10,21 +10,6 @@ var all_keys = {'Out of pocket':['Out of pocket'],'Health Insurance':
 'SAMHSA','Other State and Local Programs**','School Health'],'Public Health Activity':['Federal','State and Local'],
     'Investment':['Research','Structures & Equipment']
 };
-String.prototype.replaceAll = function(search, replacement) {
-    var target = this;
-    return target.replace(new RegExp(search, 'g'), replacement);
-}; //http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
-d3.csv("data/nhe2014.csv", function(data) {
-    console.log(data);
-    for(i = 1960;i<=2014;i++){
-        allData.push({Year:i})
-    }
-    allData.forEach( function (d) {
-        data.forEach(function(d_1){
-            d[d_1['Expenditure Amount (Millions)'].trim()] = +d_1[d.Year].replaceAll(',','')||0
-        })
-    });
-    areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys,d3.scale.category10());
 	margin = { top: 40, right: 0, bottom: 40, left: 80 };
 
 	width = 800 - margin.left - margin.right,
@@ -44,6 +29,22 @@ d3.csv("data/nhe2014.csv", function(data) {
 	  .style("stroke",'black')
 	  .style("fill", "none")
 	  .style("stroke-width", 1);
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+}; //http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+d3.csv("data/nhe2014.csv", function(data) {
+    console.log(data);
+    for(i = 1960;i<=2014;i++){
+        allData.push({Year:i})
+    }
+    allData.forEach( function (d) {
+        data.forEach(function(d_1){
+            d[d_1['Expenditure Amount (Millions)'].trim()] = +d_1[d.Year].replaceAll(',','')||0
+        })
+    });
+    areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys,d3.scale.category10());
+
 });
 function updateVisualization() {
     console.log('hi')
