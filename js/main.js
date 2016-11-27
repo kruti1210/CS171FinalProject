@@ -39,7 +39,7 @@ d3.csv("data/nhe2014.csv", function(data) {
 	  .attr("x", 0)
 	  .attr("y", 0)
 	  .attr("height", height)
-	  .attr("width", wweight)
+	  .attr("width", width)
 	  .style("stroke",'black')
 	  .style("fill", "none")
 	  .style("stroke-width", 1);
