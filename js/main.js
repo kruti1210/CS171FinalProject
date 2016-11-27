@@ -19,7 +19,7 @@ svg = d3.select("#stacked-area-chart-sub").append("svg")
 	    .attr("height", height + margin.top + margin.bottom)
 	  .append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-svg.append('text).text('Hi there')
+svg.append('text').text('Hi there');
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
