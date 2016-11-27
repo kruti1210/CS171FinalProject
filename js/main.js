@@ -10,22 +10,21 @@ var all_keys = {'Out of pocket':['Out of pocket'],'Health Insurance':
 'SAMHSA','Other State and Local Programs**','School Health'],'Public Health Activity':['Federal','State and Local'],
     'Investment':['Research','Structures & Equipment']
 };
-	margin = { top: 40, right: 0, bottom: 40, left: 80 };
+	fill.margin = { top: 40, right: 0, bottom: 40, left: 80 };
 
-	width = 800 - margin.left - margin.right,
-	height = 350 - margin.top - margin.bottom;
-	svg = d3.select("#stacked-area-chart-sub").append("svg")
-	    .attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.top + margin.bottom)
+	fill.width = 800 - fill.margin.left - fill.margin.right,
+	fill.height = 350 - fill.margin.top - fill.margin.bottom;
+	fill.svg = d3.select("#stacked-area-chart-sub").append("svg")
+	    .attr("width", fill.width + fill.margin.left + fill.margin.right)
+	    .attr("height", fill.height + fill.margin.top + fill.margin.bottom)
 	  .append("g")
-	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	svg.append('text').text('HI').
-	attr('y',height/2);
-	var borderPath = svg.append("rect")
+	    .attr("transform", "translate(" + fill.margin.left + "," + fill.margin.top + ")");
+	fill.svg.append('text').text('HI').attr('y',fill.height/2);
+	var borderPath = fill.svg.append("rect")
 	  .attr("x", 0)
 	  .attr("y", 0)
-	  .attr("height", height)
-	  .attr("width", width)
+	  .attr("height", fill.height)
+	  .attr("width", fill.width)
 	  .style("stroke",'black')
 	  .style("fill", "none")
 	  .style("stroke-width", 1);
