@@ -19,7 +19,7 @@ var all_keys = {'Out of pocket':['Out of pocket'],'Health Insurance':
 	    .attr("height", fillheight + fillmargin.top + fillmargin.bottom)
 	  .append("g")
 	    .attr("transform", "translate(" + fillmargin.left + "," + fillmargin.top + ")");
-	fillsvg.append('text').text('HI').attr('y',fillheight/2);
+	fillsvg.append('text').text('HI THERE').attr('y',fillheight/2).attr('x',fillwidth/2).attr('text-anchor','middle');
 	var borderPath = fillsvg.append("rect")
 	  .attr("x", 0)
 	  .attr("y", 0)
