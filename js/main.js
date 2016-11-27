@@ -34,7 +34,7 @@ d3.csv("data/nhe2014.csv", function(data) {
 	    .attr("height", height + margin.top + margin.bottom)
 	  .append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	svg.append('text').text('Select a category from the above area chart to see a more detailed breakdown of spending in that category').
+	svg.append('text').text('HI').
 	attr('y',height/2);
 	var borderPath = svg.append("rect")
 	  .attr("x", 0)
