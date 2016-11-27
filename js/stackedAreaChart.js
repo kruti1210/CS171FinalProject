@@ -36,6 +36,7 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
 		return ((d.Year>=start_yr)&(d.Year<=end_yr))
 	});
 	selectedData.forEach(function(d){
+		console.log('hi');
 		for(prop in d){
 		if((prop!='POPULATION')&(prop!='Year'))
 			d[prop] = d[prop]/d['POPULATION'];
