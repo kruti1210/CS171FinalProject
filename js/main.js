@@ -10,6 +10,7 @@ var all_keys = {'Out of pocket':['Out of pocket'],'Health Insurance':
 'SAMHSA','Other State and Local Programs**','School Health'],'Public Health Activity':['Federal','State and Local'],
     'Investment':['Research','Structures & Equipment']
 };
+var fill;
 	fill.margin = { top: 40, right: 0, bottom: 40, left: 80 };
 
 	fill.width = 800 - fill.margin.left - fill.margin.right,
