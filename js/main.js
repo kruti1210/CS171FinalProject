@@ -10,16 +10,6 @@ var all_keys = {'Out of pocket':['Out of pocket'],'Health Insurance':
 'SAMHSA','Other State and Local Programs**','School Health'],'Public Health Activity':['Federal','State and Local'],
     'Investment':['Research','Structures & Equipment']
 };
-margin = { top: 40, right: 0, bottom: 60, left: 80 };
-
-width = 800 - margin.left - margin.right,
-height = 350 - margin.top - margin.bottom;
-svg = d3.select("#stacked-area-chart-sub").append("svg")
-	    .attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.top + margin.bottom)
-	  .append("g")
-	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-svg.append('text').text('Hi there');
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
@@ -35,6 +25,16 @@ d3.csv("data/nhe2014.csv", function(data) {
         })
     });
     areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys,d3.scale.category10());
+	margin = { top: 40, right: 0, bottom: 40, left: 80 };
+
+	width = 800 - margin.left - margin.right,
+	height = 350 - margin.top - margin.bottom;
+	svg = d3.select("#stacked-area-chart-sub").append("svg")
+	    .attr("width", width + margin.left + margin.right)
+	    .attr("height", height + margin.top + margin.bottom)
+	  .append("g")
+	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	svg.append('text').text('Select a category from the above area chart to see a more detailed breakdown of spending in that category');
 });
 function updateVisualization() {
     console.log('hi')
