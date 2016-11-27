@@ -32,7 +32,7 @@ String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 }; //http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
-d3.csv("data/nhe2014.csv", function(data) {
+d3.csv("data/nhe2014_pop.csv", function(data) {
     console.log(data);
     for(i = 1960;i<=2014;i++){
         allData.push({Year:i})
