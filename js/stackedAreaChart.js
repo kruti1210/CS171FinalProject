@@ -37,9 +37,10 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
 	})
 	selectedData.forEach( function (d) {
         for (var prop in d) {
-        // skip loop if the property is from prototype
-       console.log(d[prop]);
-    }
+		if(prop!='POPULATION'){
+			d[prop] = d[prop]/d['POPULATION'];
+		}
+    	}
     });
     console.log(selectedData);
     var transposedData = dataCategories.map(function(name) {
