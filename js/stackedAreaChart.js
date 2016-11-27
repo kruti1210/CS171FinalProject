@@ -35,6 +35,12 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
 	var selectedData = vis.data.filter(function(d){
 		return ((d.Year>=start_yr)&(d.Year<=end_yr))
 	});
+	selectedData.forEach(function(d){
+		for(prop in d){
+		if((prop!='POPULATION')&(prop!='Year'))
+			d[prop] = d[prop]/d['POPULATION'];
+		}
+	})
     console.log(selectedData);
     var transposedData = dataCategories.map(function(name) {
         return {
