@@ -35,6 +35,14 @@ d3.csv("data/nhe2014.csv", function(data) {
 	  .append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	svg.append('text').text('Select a category from the above area chart to see a more detailed breakdown of spending in that category');
+	var borderPath = svg.append("rect")
+	  .attr("x", 0)
+	  .attr("y", 0)
+	  .attr("height", height)
+	  .attr("width", wweight)
+	  .style("stroke",'black')
+	  .style("fill", "none")
+	  .style("stroke-width", 1);
 });
 function updateVisualization() {
     console.log('hi')
