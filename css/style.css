@@ -51,6 +51,9 @@ div {
     left: 220px;
     width: 60%;
 }
+.quotetext {
+    font-family: 'Shrikhand', cursive;
+}
 
 a:link {
     color: grey;
