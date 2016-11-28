@@ -1,7 +1,6 @@
-var margin = { top: 20, right: 20, bottom: 40, left: 80 };
+var margin = { top: 20, right: 30, bottom: 40, left: 80 };
     width = 800 - margin.left - margin.right,
     height = 350 - margin.top - margin.bottom;
-console.log('wtf');
 var x = d3.scale.linear()
     .range([0, width]);
 
