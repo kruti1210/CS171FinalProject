@@ -1,15 +1,15 @@
 // Code adopted from http://bl.ocks.org/weiglemc/6185069 and Lab 4
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 850 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var scatter_margin = {top: 20, right: 20, bottom: 30, left: 40},
+    scatter_width = 850 - scatter_margin.left - scatter_margin.right,
+    scatter_height = 500 - scatter_margin.top - scatter_margin.bottom;
 
 var xValue,
-    xScale = d3.scale.linear().range([0, width]),
+    xScale = d3.scale.linear().range([0, scatter_width]),
     xAxis1 = d3.svg.axis().scale(xScale).orient("bottom");
 
 var yValue,
-    yScale = d3.scale.linear().range([height, 0]),
+    yScale = d3.scale.linear().range([scatter_height, 0]),
     yAxis1 = d3.svg.axis().scale(yScale).orient("left");
 
 var popScale = d3.scale.linear().range([4,30]);
@@ -18,16 +18,16 @@ var cValue = function(d) { return d.Region;},
     color2 = d3.scale.category10();
 
 var svg2 = d3.select("#scatterplot").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", scatter_width + scatter_margin.left + scatter_margin.right)
+    .attr("height", scatter_height + scatter_margin.top + scatter_margin.bottom)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
 
 var svg3 = d3.select("#details").append("svg")
     .attr("width", 250)
     .attr("height", 500)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
 
 var tooltip = d3.select("#scatterplot").append("div")
     .attr("class", "scatter-tooltip")
@@ -143,14 +143,14 @@ function drawScatter(data) {
 
     // draw legend colored rectangles
     legend.append("rect")
-        .attr("x", width - 68)
+        .attr("x", scatter_width - 68)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", color2);
 
     // draw legend text
     legend.append("text")
-        .attr("x", width - 74)
+        .attr("x", scatter_width - 74)
         .attr("y", 9)
         .attr("dy", ".35em")
         .style("text-anchor", "end")
@@ -158,14 +158,14 @@ function drawScatter(data) {
 
     svg2.append("text")
         .attr("class", "pop-label")
-        .attr("x", width-50)
+        .attr("x", scatter_width-50)
         .attr("y", 100)
         .style("text-anchor", "end")
         .text("Circle radius corresponds");
 
     svg2.append("text")
         .attr("class", "pop-label")
-        .attr("x", width-50)
+        .attr("x", scatter_width-50)
         .attr("y", 115)
         .style("text-anchor", "end")
         .text("to population size");
