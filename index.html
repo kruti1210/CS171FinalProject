@@ -68,7 +68,41 @@
 		</div>
 
 		<div class = "row">
-			<p id="bucket1-addl-placeholder"> More visualizations relevant to Bucket 1 </p>
+			<div class="col-md-9">
+				<div class="user-control">
+					<select id="vis3b-options" class="form-control styled-select" onchange="updateChoropleth()">
+						<option value="cminle">Minimum Values</option>
+						<option value="cmaxle">Maximum Values</option>
+					</select>
+				</div>
+
+			<div id="vis-3b-placeholder"></div>
+			</div>
+			<div class="col-md-3">
+
+				<div id = "vis-3b-table">
+				<table>
+					<h2 id="state_name">State</h2>
+					<tr>
+						<th>County:</th>
+						<td id="county_min"></td>
+					</tr>
+					<tr>
+						<th>Min Life Expectancy:</th>
+						<td id="county_min_le"></td>
+					</tr>
+					<tr>
+						<th>County:</th>
+						<td id="county_max"></td>
+					</tr>
+					<tr>
+						<th>Max Life Expectancy:</th>
+						<td id="county_max_le"></td>
+					</tr>
+				</table>
+				</div>
+
+			</div>
 		</div>
 		</div>
 		
@@ -166,6 +200,7 @@
 
 
 	<script src="js/activity2.js"></script>
+	<script src="js/vis3b.js"></script>
 	<script src="js/stackedAreaChart.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/scatterplot.js"></script>
