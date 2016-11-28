@@ -72,6 +72,44 @@
 		</div>
 		</div>
 		
+		<div id="bucket3">
+		<div class="row">
+			<p class="b3-placeholders">Striking quote and image about healthcare spending</p>
+		</div>
+
+		<div class="row bucket-title">
+			<h3>Wealth and Health Care</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<p>Over past few decades, there have been great advances in science and medicine that have lead
+				to cures and treatments for many previously uncurable diseases. While this has gone a long way to improving the health of
+				the country on a whole, increasing life expectancy and other metrics of health, it has created a new cause of health inequality:
+				wealth. As you can see from the interactive charts to the right, spending on health care has increased at an incredible rate, and most
+				of this increase is due to health insurance - specifically, private health insurance. This means that there now exists a large gap
+				in life expectancy between wealthier people, who can afford good health insurance, and poorer ones who cannot.</p>
+				<p class="b3-placeholders">Striking quote about spending</p>
+			</div>
+
+			<div class="col-md-9">
+				<form class="filter" style = "float:center" onsubmit="return updateVisualization()">
+				    Start Year:
+				    <input type="text" id="start" value='1960'style = "width:100px">
+
+				    End Year:
+				    <input type="text" id="end" value="2014" style = "width:100px">
+
+				    <input type="submit" value="Filter">
+				</form>
+				<div id="stacked-area-chart"></div>
+				<div id="stacked-area-chart-sub"></div>
+			</div>
+			<div class = "col-md-12">
+				<div id='le_graph'></div>
+			</div>
+		</div>
+		</div>	
 		<div id="bucket2">
 		<div class = "row bucket-title">
 			<h3>Accessibility to Health Care</h3>
@@ -115,45 +153,6 @@
 			</div>
 		</div>
 		</div>
-		
-		<div id="bucket3">
-		<div class="row">
-			<p class="b3-placeholders">Striking quote and image about healthcare spending</p>
-		</div>
-
-		<div class="row bucket-title">
-			<h3>Wealth and Health Care</h3>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3">
-				<p>Over past few decades, there have been great advances in science and medicine that have lead
-				to cures and treatments for many previously uncurable diseases. While this has gone a long way to improving the health of
-				the country on a whole, increasing life expectancy and other metrics of health, it has created a new cause of health inequality:
-				wealth. As you can see from the interactive charts to the right, spending on health care has increased at an incredible rate, and most
-				of this increase is due to health insurance - specifically, private health insurance. This means that there now exists a large gap
-				in life expectancy between wealthier people, who can afford good health insurance, and poorer ones who cannot.</p>
-				<p class="b3-placeholders">Striking quote about spending</p>
-			</div>
-
-			<div class="col-md-9">
-				<form class="filter" style = "float:center" onsubmit="return updateVisualization()">
-				    Start Year:
-				    <input type="text" id="start" value='1960'style = "width:100px">
-
-				    End Year:
-				    <input type="text" id="end" value="2014" style = "width:100px">
-
-				    <input type="submit" value="Filter">
-				</form>
-				<div id="stacked-area-chart"></div>
-				<div id="stacked-area-chart-sub"></div>
-			</div>
-			<div class = "col-md-12">
-				<div id='le_graph'></div>
-			</div>
-		</div>
-		</div>	
 
 	</div>
 
