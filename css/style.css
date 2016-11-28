@@ -200,3 +200,36 @@ text.axis-category {
 text.axis-state {
     fill: #000;
 }
+
+/* CSS for Vis 3b*/
+.user-control {
+    width: 200px;
+    margin-top: 20px;
+}
+
+table {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+th {
+    height: 30px;
+    text-align: left;
+    font-size: 15px;
+}
+
+td {
+    text-align: right;
+    width: 150px;
+    font-size: 14px;
+}
+
+th, td {
+    border-bottom: 2px solid #36d374;
+    padding: 10px;
+}
+
+#vis-3b-table {
+    margin-top: 200px
+}
+
