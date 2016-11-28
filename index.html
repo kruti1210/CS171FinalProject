@@ -139,38 +139,32 @@
 				<div id="stacked-area-chart"></div>
 				<div id="stacked-area-chart-sub"></div>
 			</div>
-			<div class = "col-md-12">
+			<div class = "col-md-9">
 				<div id='le_graph'></div>
+			</div>
+			<div class="col-md-3">
+				<p>To the left is a plot of life expectancy by income percentile, animated so that it transitions from 2001 data to the
+				most recent 2014 data, leaving the 2001 curve on the plot as a transparent line for points of reference. The general progression of
+				the line is upwards, but varies at different points on the curve. For example, over the past decade or so people in the top percentile have
+				seen their life expectancy increase by ~3 years, while people in the lowest percentile have not seen a noticeable increase at all.</p>
 			</div>
 		</div>
 		</div>	
-				<div id="bucket2">
+		<div id="bucket2">
 		<div class = "row bucket-title">
-			<h1>Access to Health Care</h1>
+			<h3>Accessibility to Health Care</h3>
 		</div>
-		<img id="access-img" src="img/Improving-Access.jpg">
-			<div class="row">
-				<h3 align="center"><i>Many Americans do not have regular access to proper health care due to their
-				income level, state's health care facilities, or other social determinants.</i></h3>
-				<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
+
+		<div class="row">
+			<div class="col-md-6 b2-placeholders">
+				<p>Text describing Bucket 2</p>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div id="heatmap"></div>
-				</div>
-				<div class="col-md-6">
-					<br>
-					<br>
-					<br>
-					<p align="center" class="access-number"><b>29,069,764</b></p>
-					<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
-					<p align="center" class="access-number"><b>21,126,092</b></p>
-					<p align="center" class="access-number-description">more American adults would have health insurance if all states performed like Massachusetts and Hawaii</p>
-					<p align="center" class="access-number"><b>7,078</b></p>
-					<p align="center" class="access-number-description">more US-born infants would live past one if all states performed like Massachusetts</p>
-				</div>
+
+			<div class="col-md-5 b2-placeholders">
+				<p>Image relevant to Bucket 2</p>
 			</div>
-			<div class="row">
+		</div>
+			<div id="heatmap"></div>
 			<div class="select">
 				<select id="scatter-x" class="form-control" onchange="load()">
 					<option value="Active_Physicians">Select x-axis (Default: Active Physicians per 100,000 population)</option>
@@ -183,9 +177,22 @@
 					<option value="Wait_Time">Average emergency room wait time</option>
 				</select>
 			</div>
-			<div class="scatter" id="scatterplot"></div>
-			<div class="scatter" id="details"></div>
+					<div class="scatter" id="scatterplot"></div>
+					<div class="scatter" id="details"></div>
+
+		<div class="row">
+			<div class="col-md-4 b2-placeholders">
+				<p>Visualization 1 of Physicians per population by state</p>
 			</div>
+
+			<div class="col-md-5 b2-placeholders">
+				<p>Visualization ## showing consequences of poor medical care and accessibility</p>
+			</div>
+
+			<div class="col-md-2 b2-placeholders">
+				<p>Quote explaining core concept of Bucket 2</p>
+			</div>
+		</div>
 		</div>
 
 	</div>
