@@ -1,9 +1,9 @@
 // adopted from http://bl.ocks.org/tjdecke/5558084
 
-var margin = { top: 50, right: 0, bottom: 100, left: 100 },
-    width = 580 - margin.left - margin.right,
-    height = 550 - margin.top - margin.bottom,
-    gridSize = Math.floor(width / 12),
+var heatmap_margin = { top: 50, right: 0, bottom: 100, left: 100 },
+    heatmap_width = 580 - heatmap_margin.left - heatmap_margin.right,
+    heatmap_height = 550 - heatmap_margin.top - heatmap_margin.bottom,
+    gridSize = Math.floor(heatmap_width / 12),
     legendElementWidth = gridSize*2,
     buckets = 4,
     colors = ["#fee5d9", "#fcae91", "fb6a4a", "cb181d"],
@@ -11,16 +11,12 @@ var margin = { top: 50, right: 0, bottom: 100, left: 100 },
     states = [],
     categories = ["Adults without a doctor (2015)", "Uninsured adults (2015)", "Infant death rate (2013)", "Adults reporting poor/fair health (2015)"];
 
-var values1 = [],
-    values2 = [],
-    values3 = [],
-    values4 = [];
 
 var heatmap_svg = d3.select("#heatmap").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", heatmap_width + heatmap_margin.left + heatmap_margin.right)
+    .attr("height", heatmap_height + heatmap_margin.top + heatmap_margin.bottom)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + heatmap_margin.left + "," + heatmap_margin.top + ")");
 
 d3.csv("data/Heatmap2.csv", function(error, data) {
     data.forEach(function (d) {
@@ -32,7 +28,6 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
 
     for (i = 0; i < 50; i++) {
         states_feeder.push(data[i]);
-        values1.push(data[i].Value);
     }
     console.log(states_feeder);
     states_feeder.sort(function(a, b) { return a.State_num - b.State_num; });
@@ -48,7 +43,7 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
         .enter().append("text")
         .text(function (d) { return d;})
         .attr("x", 0)
-        .attr("y", function(d, i) { return (i-2) * (height/50) -1})
+        .attr("y", function(d, i) { return (i-2) * (heatmap_height/50) -1})
         .style("text-anchor", "end")
         .attr("transform", "translate(-6," + (gridSize / 1.5) + ")")
         .attr("class", "stateLabel mono axis-state");
@@ -82,12 +77,12 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
 
     cards.enter().append("rect")
         .attr("x", function(d) { return (d.Category_num - 1) * gridSize; })
-        .attr("y", function(d) { return (d.State_num - 1) * (height/50); })
+        .attr("y", function(d) { return (d.State_num - 1) * (heatmap_height/50); })
         .attr("rx", 4)
         .attr("ry", 4)
         .attr("class", "card bordered")
         .attr("width", gridSize)
-        .attr("height", height/50)
+        .attr("height", heatmap_height/50)
         .style("fill", colors[0]);
 
     cards.transition().duration(1000)
@@ -105,7 +100,7 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
 
     legend.append("rect")
         .attr("x", function(d, i) { return legendElementWidth * i; })
-        .attr("y", height + 10)
+        .attr("y", heatmap_height + 10)
         .attr("width", legendElementWidth)
         .attr("height", gridSize / 5)
         .style("fill", function(d, i) { return colors[i]; });
@@ -114,7 +109,7 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
         .attr("class", "mono")
         .text(function(d, i) { return "Quartile " + (i + 1); })
         .attr("x", function(d, i) { return legendElementWidth * i; })
-        .attr("y", height + gridSize);
+        .attr("y", heatmap_height + gridSize);
 
     legend.exit().remove();
 
