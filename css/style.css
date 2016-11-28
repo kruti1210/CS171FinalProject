@@ -236,3 +236,17 @@ th, td {
     margin-top: 200px
 }
 
+/* Access to health care styling */
+
+#access-img {
+    width:100%;
+}
+
+#access-intro, .access-number-description {
+    font-weight: 100;
+}
+
+.access-number {
+    font-size: 50px;
+}
+
