@@ -21,6 +21,10 @@ div {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.segway {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+}
 
 #main-title {
     font-weight: 100;
