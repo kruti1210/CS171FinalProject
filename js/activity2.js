@@ -41,7 +41,7 @@ var path = d3.geo.path()
 var colorBins = 9;
 
 var color = d3.scale.quantize()
-    .range(colorbrewer.Blues[colorBins]);
+    .range(colorbrewer.Reds[colorBins]);
 
 /*
  Learned how to format numbers at: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md
@@ -126,19 +126,19 @@ function createVisualization (error, data, data2, data3) {
     worldMap.on("mouseover", function(d) {
         d3.select(this)
             .transition().duration(400)
-            .style("opacity", 1);
+            .style("opacity", .8);
         div.transition().duration(400)
-            .style("opacity", 1)
+            .style("opacity", .8)
         div.html(
             "Country: " + d.countryName+ "<br/>" +
             "Life Expectancy: " + d.le2013+ "<br/>")
             .style("left", (d3.event.pageX - 250) + "px")
-            .style("top", (d3.event.pageY - 500) + "px");
+            .style("top", (d3.event.pageY - 800) + "px");
     })
         .on("mouseout", function() {
             d3.select(this)
                 .transition().duration(400)
-                .style("opacity", 0.8);
+                .style("opacity", 1);
             div.transition().duration(400)
                 .style("opacity", 0);
         });
@@ -153,7 +153,7 @@ function createVisualization (error, data, data2, data3) {
 
     // --> Legend cubes implementation
     var legend = svgLE.selectAll("g.legend")
-        .data(colorbrewer.Blues[colorBins]);
+        .data(colorbrewer.Reds[colorBins]);
 
     legend.enter().append("g")
         .attr("class", "legend");
@@ -166,7 +166,7 @@ function createVisualization (error, data, data2, data3) {
         .attr("height", ld_h)
         .attr("width", ld_w)
         .style("fill", function(d, i) {
-            return colorbrewer.Blues[colorBins][i];
+            return colorbrewer.Reds[colorBins][i];
         });
 
     legend.exit().remove();
