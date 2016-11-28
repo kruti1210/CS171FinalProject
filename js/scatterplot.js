@@ -80,11 +80,11 @@ function drawScatter(data) {
 
     svg2.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + scatter_height + ")")
         .call(xAxis1)
         .append("text")
         .attr("class", "label")
-        .attr("x", width - 50)
+        .attr("x", scatter_width - 50)
         .attr("y", -6)
         .style("text-anchor", "end")
         .text(function() {
