@@ -24,6 +24,7 @@ div {
 .segway {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 30px;
+    fill:'red';
 }
 
 #main-title {
