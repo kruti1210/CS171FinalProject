@@ -178,28 +178,12 @@
 			<h1>Access to Health Care</h1>
 		</div>
 		<img id="access-img" src="img/Improving-Access.jpg">
-		<div class="row">
-			<h3 align="center"><i>Many Americans do not have regular access to proper health care due to their
+			<div class="row">
+				<h3 align="center"><i>Many Americans do not have regular access to proper health care due to their
 				income level, state's health care facilities, or other social determinants.</i></h3>
-			<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<div id="heatmap"></div>
+				<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
 			</div>
-			<div class="col-md-6">
-				<br>
-				<br>
-				<br>
-				<p align="center" class="access-number"><b>29,069,764</b></p>
-				<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
-				<p align="center" class="access-number"><b>21,126,092</b></p>
-				<p align="center" class="access-number-description">more American adults would have health insurance if all states performed like Massachusetts and Hawaii</p>
-				<p align="center" class="access-number"><b>7,078</b></p>
-				<p align="center" class="access-number-description">more US-born infants would live past one if all states performed like Massachusetts</p>
-			</div>
-		</div>
-		<div class="row">
+			<div class="row">
 			<div class="select">
 				<select id="scatter-x" class="form-control" onchange="load()">
 					<option value="Active_Physicians">Select x-axis (Default: Active Physicians per 100,000 population)</option>
@@ -213,9 +197,30 @@
 				</select>
 			</div>
 			<div class="scatter" id="scatterplot"></div>
+				<br><br><br><p>According to the <a href="http://www.ahrq.gov/research/findings/nhqrdr/nhqr11/chap9.html">Agency for Healthcare Research and Quality</a>,
+			proper health care access means that patients should be able to enter the health care system, gain access to medical provider sites, and have medical providers
+			who meet their needs and build strong, trusting relationships. The scatterplot to the left shows how US states differ in their ability
+			to provide enough hospitals and active physicians for their population and how this may impact the wait time for patients to see a doctor
+			when in the emergency room. Click each state's bubble for more details!</p>
 			<div class="scatter" id="details"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div id="heatmap"></div>
+				</div>
+				<div class="col-md-6">
+					<br>
+					<br>
+					<br>
+					<p align="center" class="access-number"><b>29,069,764</b></p>
+					<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
+					<p align="center" class="access-number"><b>21,126,092</b></p>
+					<p align="center" class="access-number-description">more American adults would have health insurance if all states performed like Massachusetts and Hawaii</p>
+					<p align="center" class="access-number"><b>7,078</b></p>
+					<p align="center" class="access-number-description">more US-born infants would live past one if all states performed like Massachusetts</p>
+				</div>
+			</div>
 		</div>
-	</div>
 
 </div>
 
