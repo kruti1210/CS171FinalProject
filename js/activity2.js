@@ -13,7 +13,7 @@ var div = d3.select("#vis-3-placeholder").append("div")
 
 // Create SVG area
 var width = 900,
-    height = 600;
+    height = 500;
 
 var svgLE = d3.select("#vis-3-placeholder").append("svg")
     .attr("width", width)
@@ -24,7 +24,7 @@ var svgLE = d3.select("#vis-3-placeholder").append("svg")
 
 var projection = d3.geo.mercator()
     .translate([width / 2, height / 2 + 100])
-    .scale([130]);
+    .scale([120]);
 
 // Specify it in a new geo path generator
 var path = d3.geo.path()
