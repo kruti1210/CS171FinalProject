@@ -43,7 +43,7 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
         .enter().append("text")
         .text(function (d) { return d;})
         .attr("x", 0)
-        .attr("y", function(d, i) { return (i-2) * (heatmap_height/50) -1})
+        .attr("y", function(d, i) { return (i-2) * (heatmap_height/50) -4})
         .style("text-anchor", "end")
         .attr("transform", "translate(-6," + (gridSize / 1.5) + ")")
         .attr("class", "stateLabel mono axis-state");
