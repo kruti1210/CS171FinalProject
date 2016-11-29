@@ -17,7 +17,7 @@ var divUSLE = d3.select("#vis-3b-placeholder").append("div")
 
 
 // Create SVG area
-var widthUSLE = 800,
+var widthUSLE = 900,
     heightUSLE = 600;
 
 var usa;
@@ -31,7 +31,7 @@ var svgUSLE = d3.select("#vis-3b-placeholder").append("svg")
 
 var projectionUSLE = d3.geo.albersUsa()
     .scale(1000)
-    .translate([width / 2, height / 2]);
+    .translate([widthUSLE / 2, heightUSLE / 2]);
 
 // Specify it in a new geo path generator
 var pathUSLE = d3.geo.path()
@@ -183,7 +183,7 @@ function updateChoropleth() {
     legendUSLE.append("rect")
         .attr("x", "30")
         .attr("y", function (d, i) {
-            return height - i * ld_h - 2*ld_h;
+            return heightUSLE - i * ld_h - 2*ld_h;
         })
         .attr("height", ld_h)
         .attr("width", ld_w)
@@ -205,7 +205,7 @@ function updateChoropleth() {
     aTextUSLE
         .attr("x", "60")
         .attr("y", function(d, i) {
-            return height - i * ld_h - ld_h - 5;
+            return heightUSLE - i * ld_h - ld_h - 5;
         })
         .text(function (d) {
             var i = colorUSLE.invertExtent(d);
