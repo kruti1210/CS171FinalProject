@@ -274,3 +274,13 @@ th, td {
 .access-number {
     font-size: 50px;
 }
+
+.quote-access {
+    font-family: 'Shrikhand', cursive;
+    width: 100%;
+}
+
+#access-info {
+    text-align: center;
+    width: 40%;
+}
