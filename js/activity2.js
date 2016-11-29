@@ -51,7 +51,7 @@ var regformat = d3.format("f");
 // Check if loaded; call vis
 queue()
     .defer(d3.json, "data/world-110m.json")
-    .defer(d3.csv, "data/LE-data2.csv")
+    .defer(d3.csv, "data/LE-data3.csv")
     .defer(d3.csv, "data/country-codes.csv")
     .await(createVisualization);
 
@@ -187,7 +187,7 @@ function createVisualization (error, data, data2, data3) {
         })
         .text(function (d) {
             var i = color.invertExtent(d);
-            return d3.round(i[0], 2);
+            return d3.round(i[0], 1);
         });
 
     aText.exit().remove();
