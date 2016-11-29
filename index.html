@@ -6,6 +6,7 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -15,21 +16,21 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 
-	<nav class="navbar navbar-fixed-top navbar-inverse">
-		<ul class="nav navbar-nav">
-			<li><a href="#introbucket">Intro</a></li>
-			<li><a href="#bucket1">Bucket 1</a></li>
-			<li><a href="#bucket3">Wealth and Health Care</a></li>
-			<li><a href="#bucket2">Accessibility to Health Care</a></li>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+	<ul class="nav navbar-nav">
+		<li><a href="#introbucket">Intro</a></li>
+		<li><a href="#bucket1">Bucket 1</a></li>
+		<li><a href="#bucket3">Wealth and Health Care</a></li>
+		<li><a href="#bucket2">Accessibility to Health Care</a></li>
 
-		</ul>
-	</nav>
+	</ul>
+</nav>
 
-	<div class = "container">
+<div class = "container">
 
-		<div id="introbucket">
+	<div id="introbucket">
 
-			<h1 id="main-title">Contextualizing American Health Inequality</h1>
+		<h1 id="main-title">Health Inequality in the United States</h1>
 
 		<div class="row">
 			<header class="main-header" role="banner">
@@ -44,26 +45,39 @@
 				<a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Quote Source</a>
 			</p>
 		</div>
-		</div>
-		
-		<div id="bucket1">
+	</div>
+
+	<div id="bucket1">
 		<div class="row bucket-title">
-			<h1>Bucket 1 Title</h1>
+			<h1>Contextualizing American Health Inequality</h1>
 		</div>
 
 		<div class="row">
-			<div id="vis-3-placeholder" class="col-md-9" >
-				<p>Visualization 3 of Life Expectancy across the world</p>
+
+			<div id="vis-3-placeholder" class="col-md-9" ></div>
+
+			<div id="text3-placeholder" class="col-md-3" >
+
 			</div>
 
-			<div class="col-md-3" id="text3-placeholder">
-				<p>Text describing US in world context to accompany Visualization 3</p>
-			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-6" id="bucket1-placeholder">
-				<p> Text describing Bucket 1</p>
+			<div id="bucket1-placeholder">
+
+				<p class="col-md-4 para-j">Is the United States healthcare system truly exemplary? Or is this a widespread misconception?
+					When asked, “Where does the greatest healthcare inequality exist”, people
+					likely point to developing countries… However, as noted by experts in healthcare worldwide,
+					healthcare inequality exists to a severe degree in the United States and often goes unnoticed.
+					Public health scholars like Ichiro Kawachi go as far as saying,
+				</p>
+
+				<h2 class="col-md-8 quotetext">
+					“There are huge inequalities in this country that often get overlooked … If you want to observe
+					the problems of poverty and inequality, you don’t need to travel all the way to Malawi. You can
+					go to a rural house in America.”
+				</h2>
+
 			</div>
 		</div>
 
@@ -76,37 +90,37 @@
 					</select>
 				</div>
 
-			<div id="vis-3b-placeholder"></div>
+				<div id="vis-3b-placeholder"></div>
 			</div>
 			<div class="col-md-3">
 
 				<div id = "vis-3b-table">
-				<table>
-					<h2 id="state_name">State</h2>
-					<tr>
-						<th>County:</th>
-						<td id="county_min"></td>
-					</tr>
-					<tr>
-						<th>Min Life Expectancy:</th>
-						<td id="county_min_le"></td>
-					</tr>
-					<tr>
-						<th>County:</th>
-						<td id="county_max"></td>
-					</tr>
-					<tr>
-						<th>Max Life Expectancy:</th>
-						<td id="county_max_le"></td>
-					</tr>
-				</table>
+					<table>
+						<h2 id="state_name">State</h2>
+						<tr>
+							<th>County:</th>
+							<td id="county_min"></td>
+						</tr>
+						<tr>
+							<th>Min Life Expectancy:</th>
+							<td id="county_min_le"></td>
+						</tr>
+						<tr>
+							<th>County:</th>
+							<td id="county_max"></td>
+						</tr>
+						<tr>
+							<th>Max Life Expectancy:</th>
+							<td id="county_max_le"></td>
+						</tr>
+					</table>
 				</div>
 
 			</div>
 		</div>
-		</div>
-		
-		<div id="bucket2">
+	</div>
+
+	<div id="bucket2">
 		<div class="row">
 			<p class="b3-placeholders">Striking quote and image about healthcare spending</p>
 		</div>
@@ -114,78 +128,78 @@
 		<div class="row bucket-title">
 			<h1>Wealth and Health Care</h1>
 		</div>
-			<div class='col-md-12'>
-				<h4 class = 'segway' align = 'center'>Spending on health care has increased dramatically...</h4>
-			</div>
+		<div class='col-md-12'>
+			<h4 class = 'segway' align = 'center'>Spending on health care has increased dramatically...</h4>
+		</div>
 
 		<div class="row">
-			
+
 			<div class="col-md-3">
 				<p>Over past few decades, there have been great advances in science and medicine that have lead
-				to cures and treatments for many previously uncurable diseases. While this has gone a long way to improving the health of
-				the country on a whole, increasing life expectancy and other metrics of health, it has created a new cause of health inequality:
-				wealth. As you can see from the interactive charts to the right, spending on health care has increased at an incredible rate, and most
-				of this increase is due to health insurance - specifically, private health insurance. This means that there now exists a large gap
-				in life expectancy between wealthier people, who can afford good health insurance, and poorer ones who cannot.</p>
+					to cures and treatments for many previously uncurable diseases. While this has gone a long way to improving the health of
+					the country on a whole, increasing life expectancy and other metrics of health, it has created a new cause of health inequality:
+					wealth. As you can see from the interactive charts to the right, spending on health care has increased at an incredible rate, and most
+					of this increase is due to health insurance - specifically, private health insurance. This means that there now exists a large gap
+					in life expectancy between wealthier people, who can afford good health insurance, and poorer ones who cannot.</p>
 				<h2 class="quotetext">"NHE grew 5.3% to $3.0 trillion in 2014, or $9,523 per person, and accounted for 17.5% of Gross Domestic Product (GDP)" - <a href = "https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData/NHE-Fact-Sheet.html">CMS Fact Sheet</a> </h2>
 			</div>
 
 			<div class="col-md-9">
 				<form class="filter" style = "float:center" onsubmit="return updateVisualization()">
-				    Start Year:
-				    <input type="text" id="start" value='1960'style = "width:100px">
+					Start Year:
+					<input type="text" id="start" value='1960'style = "width:100px">
 
-				    End Year:
-				    <input type="text" id="end" value="2014" style = "width:100px">
+					End Year:
+					<input type="text" id="end" value="2014" style = "width:100px">
 
-				    <input type="submit" value="Filter">
+					<input type="submit" value="Filter">
 				</form>
 				<div id="stacked-area-chart"></div>
 				<div id="stacked-area-chart-sub"></div>
 			</div>
-			</div>
-			<div class='col-md-12'>
-				<h4 align = 'center' class = 'segway'>... further increasing the inequality in health care due to income.</h4>
-			</div>
-			<div class="row">
+		</div>
+		<div class='col-md-12'>
+			<h4 align = 'center' class = 'segway'>... further increasing the inequality in health care due to income.</h4>
+		</div>
+		<div class="row">
 			<div class = "col-md-9">
 				<div id='le_graph'></div>
 			</div>
 			<div class="col-md-3">
 				<p>To the left is a plot of life expectancy by income percentile, animated so that it transitions from 2001 data to the
-				most recent 2014 data, leaving the 2001 curve on the plot as a transparent line for points of reference. The general progression of
-				the line is upwards, but varies at different points on the curve. For example, over the past decade or so people in the top percentile have
-				seen their life expectancy increase by ~3 years, while people in the lowest percentile have not seen a noticeable increase at all.</p>
+					most recent 2014 data, leaving the 2001 curve on the plot as a transparent line for points of reference. The general progression of
+					the line is upwards, but varies at different points on the curve. For example, over the past decade or so people in the top percentile have
+					seen their life expectancy increase by ~3 years, while people in the lowest percentile have not seen a noticeable increase at all.</p>
 			</div>
 		</div>
-		</div>	
-		<div id="bucket3">
+	</div>
+	<div id="bucket3">
 		<div class = "row bucket-title">
 			<h1>Access to Health Care</h1>
 		</div>
 		<img id="access-img" src="img/Improving-Access.jpg">
-			<div class="row">
-				<h3 align="center"><i>Many Americans do not have regular access to proper health care due to their
+		<div class="row">
+			<h3 align="center"><i>Many Americans do not have regular access to proper health care due to their
 				income level, state's health care facilities, or other social determinants.</i></h3>
-				<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
+			<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div id="heatmap"></div>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div id="heatmap"></div>
-				</div>
-				<div class="col-md-6">
-					<br>
-					<br>
-					<br>
-					<p align="center" class="access-number"><b>29,069,764</b></p>
-					<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
-					<p align="center" class="access-number"><b>21,126,092</b></p>
-					<p align="center" class="access-number-description">more American adults would have health insurance if all states performed like Massachusetts and Hawaii</p>
-					<p align="center" class="access-number"><b>7,078</b></p>
-					<p align="center" class="access-number-description">more US-born infants would live past one if all states performed like Massachusetts</p>
-				</div>
+			<div class="col-md-6">
+				<br>
+				<br>
+				<br>
+				<p align="center" class="access-number"><b>29,069,764</b></p>
+				<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
+				<p align="center" class="access-number"><b>21,126,092</b></p>
+				<p align="center" class="access-number-description">more American adults would have health insurance if all states performed like Massachusetts and Hawaii</p>
+				<p align="center" class="access-number"><b>7,078</b></p>
+				<p align="center" class="access-number-description">more US-born infants would live past one if all states performed like Massachusetts</p>
 			</div>
-			<div class="row">
+		</div>
+		<div class="row">
 			<div class="select">
 				<select id="scatter-x" class="form-control" onchange="load()">
 					<option value="Active_Physicians">Select x-axis (Default: Active Physicians per 100,000 population)</option>
@@ -200,11 +214,10 @@
 			</div>
 			<div class="scatter" id="scatterplot"></div>
 			<div class="scatter" id="details"></div>
-			</div>
 		</div>
-
 	</div>
 
+</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/d3.min.js"></script>
