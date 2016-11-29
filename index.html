@@ -56,8 +56,14 @@
 
 			<div id="vis-3-placeholder" class="col-md-9" ></div>
 
-			<div id="text3-placeholder" class="col-md-3" >
-
+			<div class="col-md-3">
+			<p>Hover over countries and explore the life expectancies, upon birth, across the globe using data
+				compiled in 2013. Although the United States is comfortably placed at the upper end of the spectrum
+				with an average life expectancy  of 78.9, health across the country is far more complex than a single
+				averaged number. In fact, an academic article in the Harvard Gazette boldly declares,</p>
+				<p>"Still, the remaining disparities are bell-clear in one of the bluntest measures of health:
+				life expectancy, which varies, depending on a resident’s race and ethnicity, as much as 30 years
+				between the richest and poorest U.S. counties." </p>
 			</div>
 
 		</div>
@@ -73,17 +79,25 @@
 				</p>
 
 				<div class="col-md-8">
-				<h2 class="quotetext">
-					“There are huge inequalities in this country that often get overlooked … If you want to observe
-					the problems of poverty and inequality, you don’t need to travel all the way to Malawi. You can
-					go to a rural house in America.”
-				</h2>
-				<p class="source">
-					<a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Quote Source</a>
-				</p>
+					<h2 class="quotetext">
+						“There are huge inequalities in this country that often get overlooked … If you want to observe
+						the problems of poverty and inequality, you don’t need to travel all the way to Malawi. You can
+						go to a rural house in America.”
+					</h2>
+					<p class="source">
+						<a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Quote Source</a>
+					</p>
 				</div>
 
 			</div>
+		</div>
+		<div class="row">
+			<p class="col-md-12 para-j">
+				The values below are not separated by race nor ethnicity, but simply show life expectancy variance, from 40 years of age on,
+				not just across states but even with states by county. Use the dropdown menu to explore the minimum and maximum life expectancy
+				values by state and click on each state to view more detailed information regarding the relevant counties and their life
+				expectancies.
+			</p>
 		</div>
 
 		<div class = "row">
@@ -126,7 +140,7 @@
 	</div>
 
 	<div id="bucket2">
-		
+
 		<div class="row">
 			<header class="main-header" role="banner">
 				<img src="img/bucket2img.jpg" id="img2-placeholder">
@@ -194,12 +208,12 @@
 			<h1>Access to Health Care</h1>
 		</div>
 		<img id="access-img" src="img/Improving-Access.jpg">
-			<div class="row">
-				<h3 align="center"><i>Many Americans do not have regular access to proper health care due to their
+		<div class="row">
+			<h3 align="center"><i>Many Americans do not have regular access to proper health care due to their
 				income level, state's health care facilities, or other social determinants.</i></h3>
-				<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
-			</div>
-			<div class="row">
+			<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
+		</div>
+		<div class="row">
 			<div class="select">
 				<select id="scatter-x" class="form-control" onchange="load()">
 					<option value="Active_Physicians">Select x-axis (Default: Active Physicians per 100,000 population)</option>
@@ -213,53 +227,53 @@
 				</select>
 			</div>
 			<div class="scatter" id="scatterplot"></div>
-				<br><br><br><p>According to the <a href="http://www.ahrq.gov/research/findings/nhqrdr/nhqr11/chap9.html">Agency for Healthcare Research and Quality</a>,
+			<br><br><br><p>According to the <a href="http://www.ahrq.gov/research/findings/nhqrdr/nhqr11/chap9.html">Agency for Healthcare Research and Quality</a>,
 			proper health care access means that patients should be able to enter the health care system, gain access to medical provider sites, and have medical providers
 			who meet their needs and build strong, trusting relationships. The scatterplot to the left shows how US states differ in their ability
 			to provide enough hospitals and active physicians for their population and how this may impact the wait time for patients to see a doctor
 			when in the emergency room. Click each state's bubble for more details!</p>
 			<div class="scatter" id="details"></div>
+		</div>
+		<div class="col-md-7">
+			<br><br>
+			<h2 class="quote-access">“20.3 million U.S. children - 28% of the pediatric population under the age of 18 - are
+				without adequate health care.” - <a href="https://www.childrenshealthfund.org/unfinished-business-press-release/">Children's Health Fund</a></h2>
+		</div>
+		<div class="col-md-4" id="access-info">
+			<br>
+			<p>Unfortunately, all states within the US do not provide adequate levels of health care access to all of its residents. This can have a great negative impact for
+				ultimate health care outcomes, contributing to the ultimate health inequalities we see within the United States. Check out the quartile-ranking of the US states for
+				health care access metrics (percentage of adults who don't have a regular doctor & percentage of uninsured adults), and how this corresponds to health care outcome metrics
+				(infant death rate, patients' reports of their own health). What would happen if all states performed as well as the top state for these indicators?</p>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div id="heatmap"></div>
 			</div>
-			<div class="col-md-7">
-				<br><br>
-				<h2 class="quote-access">“20.3 million U.S. children - 28% of the pediatric population under the age of 18 - are
-					without adequate health care.” - <a href="https://www.childrenshealthfund.org/unfinished-business-press-release/">Children's Health Fund</a></h2>
-			</div>
-			<div class="col-md-4" id="access-info">
+			<div class="col-md-6">
 				<br>
-				<p>Unfortunately, all states within the US do not provide adequate levels of health care access to all of its residents. This can have a great negative impact for
-					ultimate health care outcomes, contributing to the ultimate health inequalities we see within the United States. Check out the quartile-ranking of the US states for
-					health care access metrics (percentage of adults who don't have a regular doctor & percentage of uninsured adults), and how this corresponds to health care outcome metrics
-					(infant death rate, patients' reports of their own health). What would happen if all states performed as well as the top state for these indicators?</p>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div id="heatmap"></div>
-				</div>
-				<div class="col-md-6">
-					<br>
-					<br>
-					<br>
-					<p align="center" class="access-number"><b>29,069,764</b></p>
-					<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
-					<p align="center" class="access-number"><b>21,126,092</b></p>
-					<p align="center" class="access-number-description">more American adults would have health insurance if all states performed like Massachusetts and Hawaii</p>
-					<p align="center" class="access-number"><b>7,078</b></p>
-					<p align="center" class="access-number-description">more US-born infants would live past one if all states performed like Massachusetts</p>
-				</div>
+				<br>
+				<br>
+				<p align="center" class="access-number"><b>29,069,764</b></p>
+				<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
+				<p align="center" class="access-number"><b>21,126,092</b></p>
+				<p align="center" class="access-number-description">more American adults would have health insurance if all states performed like Massachusetts and Hawaii</p>
+				<p align="center" class="access-number"><b>7,078</b></p>
+				<p align="center" class="access-number-description">more US-born infants would live past one if all states performed like Massachusetts</p>
 			</div>
 		</div>
+	</div>
 	<h2 align = 'center'>The Future of Health Care</h2>
 	<div class="row">
 		<div class="col-md-12" align = 'center'>
-	<iframe width="420" height="315" 
-src="https://www.youtube.com/embed/esugL07XANg">
-</iframe>
+			<iframe width="420" height="315"
+					src="https://www.youtube.com/embed/esugL07XANg">
+			</iframe>
 		</div>
 		<div class="col-md-12">
-			<p align = 'center'>While we are not experts and are therefor not in a position to speculate about the future of health care, we can all 
-			agree that hopefully there will be less inequality, not only within in the US but more generally in the world. We hope this project
-			has highlighted the situation of health care inequality that currently exists within the states.</p>
+			<p align = 'center'>While we are not experts and are therefor not in a position to speculate about the future of health care, we can all
+				agree that hopefully there will be less inequality, not only within in the US but more generally in the world. We hope this project
+				has highlighted the situation of health care inequality that currently exists within the states.</p>
 		</div>
 	</div>
 
