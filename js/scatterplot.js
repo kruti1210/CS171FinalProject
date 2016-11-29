@@ -25,7 +25,7 @@ var svg2 = d3.select("#scatterplot").append("svg")
 
 var svg3 = d3.select("#details").append("svg")
     .attr("width", 250)
-    .attr("height", 500)
+    .attr("height", 200)
     .append("g")
     .attr("transform", "translate(" + scatter_margin.left + "," + scatter_margin.top + ")");
 
