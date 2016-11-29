@@ -43,11 +43,6 @@ var colorBins = 9;
 var color = d3.scale.quantize()
     .range(colorbrewer.Reds[colorBins]);
 
-/*
- Learned how to format numbers at: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md
- */
-var regformat = d3.format("f");
-
 // Check if loaded; call vis
 queue()
     .defer(d3.json, "data/world-110m.json")
@@ -116,7 +111,7 @@ function createVisualization (error, data, data2, data3) {
                 return '#ccc';
             }
         })
-        .style("opacity", 0.8);
+        .style("opacity", 1);
 
     /*
      THIS CODE FOR THE TOOLTIP WAS TAKEN DIRECTLY FROM RUSSIA CHOROPLETH MAP
