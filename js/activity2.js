@@ -12,18 +12,18 @@ var div = d3.select("#vis-3-placeholder").append("div")
     .style("opacity", 0);
 
 // Create SVG area
-var width = 900,
-    height = 500;
+var widthLE = 900,
+    heightLE = 500;
 
 var svgLE = d3.select("#vis-3-placeholder").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", widthLE)
+    .attr("height", heightLE);
 
 // Create mercator projection
 // var projection = d3.geo.orthographic()
 
 var projection = d3.geo.mercator()
-    .translate([width / 2, height / 2 + 100])
+    .translate([widthLE / 2, heightLE / 2 + 100])
     .scale([120]);
 
 // Specify it in a new geo path generator
@@ -156,7 +156,7 @@ function createVisualization (error, data, data2, data3) {
     legend.append("rect")
         .attr("x", "30")
         .attr("y", function (d, i) {
-            return height - i * ld_h - 2*ld_h;
+            return heightLE - i * ld_h - 2*ld_h;
         })
         .attr("height", ld_h)
         .attr("width", ld_w)
@@ -178,7 +178,7 @@ function createVisualization (error, data, data2, data3) {
     aText
         .attr("x", "60")
         .attr("y", function(d, i) {
-            return height - i * ld_h - ld_h - 5;
+            return heightLE - i * ld_h - ld_h - 5;
         })
         .text(function (d) {
             var i = color.invertExtent(d);
