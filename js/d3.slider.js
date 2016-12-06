@@ -2,10 +2,10 @@ d3.slider = function module() {
   "use strict";
 
   var div, min = 0, max = 100, svg, svgGroup, value, classPrefix, axis, 
-  height=40, rect,
+  height=35, rect,
   rectHeight = 12,
   tickSize = 6,
-  margin = {top: 25, right: 25, bottom: 15, left: 25}, 
+  margin = {top: 15, right: 25, bottom: 5, left: 25}, 
   ticks = 0, tickValues, scale, tickFormat, dragger, width, 
   range = false,
   callbackFn, stepValues, focus;
