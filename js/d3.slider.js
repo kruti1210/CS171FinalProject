@@ -5,7 +5,7 @@ d3.slider = function module() {
   height=35, rect,
   rectHeight = 12,
   tickSize = 6,
-  margin = {top: 25, right: 25, bottom: 5, left: 25}, 
+  margin = {top: 10, right: 25, bottom: 5, left: 25}, 
   ticks = 0, tickValues, scale, tickFormat, dragger, width, 
   range = false,
   callbackFn, stepValues, focus;
