@@ -83,13 +83,6 @@ d3.csv("data/le_wealth.csv", function(error, data) {
         .attr('x',x(88))
     svg.append('g')
         .append('text')
-        .text('2001')
-        .attr('y',y(75))
-        .attr('x',x(70))
-        .attr('font-size',32)
-        .attr('opacity',.2)
-    svg.append('g')
-        .append('text')
         .attr('class','textyear')
         .text(year)
         .attr('y',y(77))
@@ -116,34 +109,13 @@ d3.csv("data/le_wealth.csv", function(error, data) {
         .attr("stroke-width", 2)
         .attr("fill", "none")
         .attr("class", "linefemales");
-    var lineGraphMalesBase = svg.append("path")
-        .attr("d", line(males))
-        .attr("stroke", "blue")
-        .attr('opacity',.2)
-        .attr("stroke-width", 2)
-        .attr("fill", "none")
-        .attr("class", "linemales");
-
-    var lineGraphFemalesBase = svg.append("path")
-        .attr("d", line(females))
-        .attr("stroke", "red")
-        .attr('opacity',.2)
-        .attr("stroke-width", 2)
-        .attr("fill", "none")
-        .attr("class", "linefemales");
 });
-var inter = setInterval(function() {
-    updateData();
-}, 3000);
+
 
 // ** Update data section (Called from the onclick)
-function updateData() {
+function updateData(year) {
 
     // Get the data again
-    year = year+1;
-    if(year==2015){
-        year=2001;
-    };
     var males = alldata.filter(function(d){
         return (d.year==year)&(d.gnd=='M');
     });
@@ -169,3 +141,6 @@ function updateData() {
 
 
 }
+var slider = d3.slider().min(2001).max(2014).ticks(13).showRange(true).value(2001);
+// Render the slider in the div
+d3.select('#slider').call(slider);
