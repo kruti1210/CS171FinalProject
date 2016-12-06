@@ -45,7 +45,7 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
     vis.margin = { top: 40, right: 0, bottom: 40, left: 80 };
 
     vis.width = 800 - vis.margin.left - vis.margin.right,
-        vis.height = 350 - vis.margin.top - vis.margin.bottom;
+        vis.height = 320 - vis.margin.top - vis.margin.bottom;
     //Tooltip from http://bl.ocks.org/d3noob/c37cb8e630aaef7df30d
     vis.tooltip = d3.select("body")
         .append("div")
