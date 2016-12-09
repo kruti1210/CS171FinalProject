@@ -8,8 +8,9 @@
  AT: http://bl.ocks.org/KoGor/5685876
  */
 
-/* Got converted states file from: https://github.com/JonathanWarrick/D3USMapTutorial */
+/* Source for USA county GeoJSON file: http://bl.ocks.org/mbostock/raw/4090846/us.json */
 
+var data2 = all_data_le;
 
 var divUSLE = d3.select("#vis-3b-placeholder").append("div")
     .attr("class", "tooltip2")
@@ -26,9 +27,7 @@ var svgUSLE = d3.select("#vis-3b-placeholder").append("svg")
     .attr("width", widthUSLE)
     .attr("height", heightUSLE);
 
-// Create mercator projection
-// var projection = d3.geo.orthographic()
-
+// Create  projection
 var projectionUSLE = d3.geo.albersUsa()
     .scale(1000)
     .translate([widthUSLE / 2, heightUSLE / 2]);
@@ -50,43 +49,35 @@ var colorBinsUSLE = 9;
 var colorUSLE = d3.scale.quantize()
     .range(colorbrewer.Greens[colorBinsUSLE]);
 
-/*
- Learned how to format numbers at: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md
- */
-// var regformat = d3.format("f");
 
-// Check if loaded; call vis
-// data/us-10m.json
+// Check if loaded; if so, call createVis
 queue()
-    .defer(d3.json, "data/convertedstates.json")
-    .defer(d3.csv, "data/states_le.csv")
+    .defer(d3.json, "data/us-counties.json")
     .await(createVisualization);
 
-//USLE
-
 // Load
-function createVisualization (error, data, data2) {
+function createVisualization (error, data) {
 
     // Convert the TopoJSON to GeoJSON
-    usa = topojson.feature(data, data.objects.states).features
+    usa = topojson.feature(data, data.objects.counties).features
 
     usa.forEach(function(d) {
 
         data2.forEach(function(de) {
 
-            if(d.id === de.name) {
-                d.properties.cmax = de.county_max;
-                d.properties.cmaxle = parseFloat(de.county_max_le);
-                d.properties.cmin = de.county_min;
-                d.properties.cminle = parseFloat(de.county_min_le);
-                d.properties.avgle = parseFloat(de.avg_le);
+            if (d.id === parseFloat(de.cty)) {
+                d.lefemale = de.le_female;
+                d.lemale = de.le_male;
+                d.countyname = de.cz_name;
+                d.statename = de.statename;
             }
+
         });
     });
 
-    console.log(usa);
+    // console.log(usa);
 
-    // update choropleth
+    // Update choropleth
     updateChoropleth();
 }
 
@@ -100,9 +91,10 @@ function updateChoropleth() {
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
 
     colorUSLE.domain([
-        d3.min(usa, function(d) {return d.properties.cminle; }),
-        d3.max(usa, function(d) {return d.properties.cmaxle; })
+        d3.min(usa, function(d) {return d[selectedValue]; }),
+        d3.max(usa, function(d) {return d[selectedValue]; })
     ]);
+
 
     var mapUSLE = svgUSLE.selectAll("path")
                     .data(usa);
@@ -112,11 +104,12 @@ function updateChoropleth() {
 
     mapUSLE.attr("d", pathUSLE)
         .transition()
-        .duration(1000)
+        .duration(2000)
         .style("fill", function(d) {
             //Get relevant value
-            value = d.properties[selectedValue];
-            // Learned from Mike Bostock's book at: http://chimera.labs.oreilly.com/books/1230000000345/ch12.html#_choropleth
+            value = d[selectedValue];
+            // Learned from Mike Bostock's book
+            // at: http://chimera.labs.oreilly.com/books/1230000000345/ch12.html#_choropleth
             if (value) {
                 return colorUSLE(value);
             } else {
@@ -132,6 +125,7 @@ function updateChoropleth() {
      AT: http://bl.ocks.org/KoGor/5685876
      */
 
+
     mapUSLE.on("mouseover", function(d) {
         d3.select(this)
             .transition().duration(400)
@@ -139,8 +133,10 @@ function updateChoropleth() {
         divUSLE.transition().duration(400)
             .style("opacity", .8)
         divUSLE.html(
-            "State: " + d.id+ "<br/>" +
-            "Relevant Life Expectancy: " + d3.round(d.properties[selectedValue], 1) + "<br/>")
+            "State: " + d.statename + "<br/>" +
+            "County: " + d.countyname + "<br/>" +
+            "Female Life Expectancy " + d.lefemale + "<br/>" +
+            "Male Life Expectancy: " + d.lemale + "<br/>")
             .style("left", (d3.event.pageX - 50) + "px")
             .style("top", (d3.event.pageY - 50) + "px");
     })
@@ -156,11 +152,10 @@ function updateChoropleth() {
 
     /*From hw 3 */
     mapUSLE.on("click", function (d) {
-        document.getElementById("state_name").innerHTML = d.id;
-        document.getElementById("county_min").innerHTML = d.properties.cmin;
-        document.getElementById("county_min_le").innerHTML = d3.round(d.properties.cminle, 1);
-        document.getElementById("county_max").innerHTML = d.properties.cmax;
-        document.getElementById("county_max_le").innerHTML = d3.round(d.properties.cmaxle, 1);
+        document.getElementById("state_name").innerHTML = d.statename;
+        document.getElementById("county_name").innerHTML = d.countyname;
+        document.getElementById("le_female").innerHTML = d.lefemale;
+        document.getElementById("le_male").innerHTML = d.lemale;
     });
 
 
@@ -181,6 +176,8 @@ function updateChoropleth() {
         .attr("class", "legend");
 
     legendUSLE.append("rect")
+        .transition()
+        .duration(2000)
         .attr("x", "30")
         .attr("y", function (d, i) {
             return heightUSLE - i * ld_h - 2*ld_h;
@@ -203,6 +200,8 @@ function updateChoropleth() {
         .attr("class", "aText");
 
     aTextUSLE
+        .transition()
+        .duration(2000)
         .attr("x", "60")
         .attr("y", function(d, i) {
             return heightUSLE - i * ld_h - ld_h - 5;
@@ -213,5 +212,7 @@ function updateChoropleth() {
         });
 
     aTextUSLE .exit().remove();
+
+
 
 }
