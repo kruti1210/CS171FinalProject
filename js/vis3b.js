@@ -71,6 +71,7 @@ function createVisualization (error, data) {
                 d.countyname = de.cz_name;
                 d.statename = de.statename;
                 d.closest_country = de.closest_country;
+             d.hhinc00 = de.hhinc00;
             }
 
         });
@@ -135,9 +136,7 @@ function updateChoropleth() {
             .style("opacity", .8)
         divUSLE.html(
             "State: " + d.statename + "<br/>" +
-            "County: " + d.countyname + "<br/>" +
-            "Female Life Expectancy " + d.lefemale + "<br/>" +
-            "Male Life Expectancy: " + d.lemale + "<br/>")
+            "County: " + d.countyname + "<br/>")
             .style("left", (d3.event.pageX - 50) + "px")
             .style("top", (d3.event.pageY - 50) + "px");
     })
@@ -158,6 +157,7 @@ function updateChoropleth() {
         document.getElementById("le_female").innerHTML = d.lefemale;
         document.getElementById("le_male").innerHTML = d.lemale;
      document.getElementById("le_country").innerHTML = d.closest_country;
+     document.getElementById("le_income").innerHTML = d.hhinc00;
     });
 
 
