@@ -73,6 +73,7 @@ function createVisualization (error, data) {
                 d.closest_country = de.closest_country;
              d.hhinc00 = +de.hhinc00.replace(/,/g , "");
              d.inc = de.hhinc00;
+             d.puninsured2010 = +de.puninsured2010;
             }
 
         });
@@ -159,6 +160,7 @@ function updateChoropleth() {
         document.getElementById("le_male").innerHTML = d.lemale;
      document.getElementById("le_country").innerHTML = d.closest_country;
      document.getElementById("le_income").innerHTML = d.inc;
+     document.getElementById("le_insured").innerHTML = d.puninsured2010;
     });
 
 
