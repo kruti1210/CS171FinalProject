@@ -35,14 +35,14 @@
 
 		<div class="row">
 			<header class="main-header" role="banner">
-				<img src="img/firstbanner.jpg" id="img1-placeholder">
+				<img src="img/AmericanFlag.png" id="img1-placeholder">
 				<h2 class="quote">“If you’re born a black man in, let’s say,
 					New Orleans Parish, your average life expectancy
 					is worse than the male average of countries that
 					are much poorer than America.”</h2>
 			</header>
 			<p class="source">
-				<a href="http://healthcareconferencenetwork.com/wp-content/uploads/2015/01/healthcare-bg.jpg">Image Source</a>
+				<a href="http://dprmag.org/category/nation/politics-aside-a-perspective-on-health/">Image Source</a>
 				<a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Quote Source</a>
 			</p>
 		</div>
@@ -50,7 +50,7 @@
 
 	<div id="bucket1">
 		<div class="row bucket-title">
-			<h1>Contextualizing American Health Inequality</h1>
+			<h1>Is the U.S. health care system actually exemplary?</h1>		
 		</div>
 
 		<div class="row">
@@ -83,11 +83,8 @@
 					<h2 class="quotetext">
 						“There are huge inequalities in this country that often get overlooked … If you want to observe
 						the problems of poverty and inequality, you don’t need to travel all the way to Malawi. You can
-						go to a rural house in America.”
+						go to a rural house in America.” - <a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Professor Ichiro Kawachi</a>
 					</h2>
-					<p class="source">
-						<a href="http://news.harvard.edu/gazette/story/2016/02/money-quality-health-care-longer-life">Quote Source</a>
-					</p>
 				</div>
 
 			</div>
@@ -157,7 +154,7 @@
 		</div>
 
 		<div class="row bucket-title">
-			<h1>Wealth and Health Care</h1>
+			<h1>What is the relationship between wealth and health care?</h1>
 		</div>
 		<div class='col-md-12'>
 			<h4 class = 'segway' align = 'center'>Spending on health care has increased dramatically...</h4>
@@ -199,7 +196,7 @@
 	</div>
 	<div id="bucket3">
 		<div class = "row bucket-title">
-			<h1>Access to Health Care</h1>
+			<h1>How does health care accessibility affect health outcomes?</h1>
 		</div>
 		<img id="access-img" src="img/Improving-Access.jpg">
 		<div class="row">
@@ -208,20 +205,30 @@
 			<p align="center" id="access-intro">Check out our comparison of health care access and outcomes between US states below.</p>
 		</div>
 		<div class="row">
+			<div class="col-md-4">
 			<div class="select">
-				<select id="scatter-x" class="form-control" onchange="load()">
-					<option value="Active_Physicians">Select x-axis (Default: Active Physicians per 100,000 population)</option>
+				<p>Select x-axis: </p>
+				<select name="scatter-x" id="scatter-x" class="form-control" onchange="load()">
+					<option value="Active_Physicians">Active Physicians per 100,000 population</option>
 					<option value="Hospital_Bed_Density">Hospital beds per 100,000 population</option>
 					<option value="Wait_Time">Average emergency room wait time</option>
 				</select>
-				<select id="scatter-y" class="form-control" onchange="load()">
-					<option value="Hospital_Bed_Density">Select y-axis (Default: Hospital beds per 100,000 population)</option>
+				</div>
+				</div>
+			<div class="col-md-4">
+			<div class="select">
+				<p>Select y-axis: </p>
+				<select name="scatter-y" id="scatter-y" class="form-control" onchange="load()">
+					<option value="Hospital_Bed_Density">Hospital beds per 100,000 population</option>
 					<option value="Active_Physicians">Active physicians per 100,000 population</option>
 					<option value="Wait_Time">Average emergency room wait time</option>
 				</select>
 			</div>
+			</div>
+			</div>
+			<div class="row">
 			<div class="scatter" id="scatterplot"></div>
-			<br><br><br><p>According to the <a href="http://www.ahrq.gov/research/findings/nhqrdr/nhqr11/chap9.html">Agency for Healthcare Research and Quality</a>,
+			<p>According to the <a href="http://www.ahrq.gov/research/findings/nhqrdr/nhqr11/chap9.html">Agency for Healthcare Research and Quality</a>,
 			proper health care access means that patients should be able to enter the health care system, gain access to medical provider sites, and have medical providers
 			who meet their needs and build strong, trusting relationships. The scatterplot to the left shows how US states differ in their ability
 			to provide enough hospitals and active physicians for their population and how this may impact the wait time for patients to see a doctor
@@ -234,6 +241,7 @@
 				without adequate health care.” - <a href="https://www.childrenshealthfund.org/unfinished-business-press-release/">Children's Health Fund</a></h2>
 		</div>
 		<div class="col-md-4" id="access-info">
+			<br>
 			<br>
 			<p>Unfortunately, all states within the US do not provide adequate levels of health care access to all of its residents. This can have a great negative impact for
 				ultimate health care outcomes, contributing to the ultimate health inequalities we see within the United States. Check out the quartile-ranking of the US states for
@@ -248,6 +256,9 @@
 				<br>
 				<br>
 				<br>
+				<br>
+				<br>
+				<br>
 				<p align="center" class="access-number"><b>29,069,764</b></p>
 				<p align="center" class="access-number-description">more American adults would have a usual source of health care if all states performed like Massachusetts</p>
 				<p align="center" class="access-number"><b>21,126,092</b></p>
@@ -257,22 +268,29 @@
 			</div>
 		</div>
 	</div>
-	<h2 align = 'center'>The Future of Health Care</h2>
+	<h2 align = 'center'>What is the future of health care in the United States?</h2>
 	<div class="row">
-		<div class="col-md-12" align = 'center'>
+		<div class="col-md-6" align = 'center'>
 			<iframe width="420" height="315"
 					src="https://www.youtube.com/embed/esugL07XANg">
 			</iframe>
 		</div>
-		<div class="col-md-12">
-			<p align = 'center'>While we are not experts and are therefor not in a position to speculate about the future of health care, we can all
+		<div class="col-md-5">
+			<p align = 'center'>During the Donald Trump presidency, <a href="https://www.donaldjtrump.com/positions/healthcare-reform">major changes</a>
+				are expected to change the face of health care in the United States. For one, President-elect Trump hopes to repeal the <a href="http://obamacarefacts.com/obamacare-facts/">Affordable Care Act (ACA),</a>
+				a new policy from the Obama administration that worked to expand health insurance accessibility. What is the impact of these changes? Check out these links for more information:</p>
+				<ul>
+					<li><a href="http://obamacarefacts.com/trumpcare-explained/">ObamaCare v. TrumpCare</a></li>
+					<li><a href="http://www.nytimes.com/2016/12/10/opinion/sunday/health-care-under-donald-trump.html?_r=0">Politics of health care reform</a></li>
+					<li><a href="https://www.washingtonpost.com/news/to-your-health/wp/2016/11/17/the-ultimate-qa-about-health-care-under-president-trump/?utm_term=.c054125b6fe8">Q&A about Trump's health care policy</a></li>
+				</ul>
+			<p align = 'center'>While we are not experts and are therefore not in a position to speculate about the future of health care, we can all
 				agree that hopefully there will be less inequality, not only within in the US but more generally in the world. We hope this project
 				has highlighted the situation of health care inequality that currently exists within the states.</p>
 		</div>
 	</div>
 
 </div>
-
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
