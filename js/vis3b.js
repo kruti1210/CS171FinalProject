@@ -71,7 +71,7 @@ function createVisualization (error, data) {
                 d.countyname = de.cz_name;
                 d.statename = de.statename;
                 d.closest_country = de.closest_country;
-             d.hhinc00 = de.hhinc00;
+             d.hhinc00 = +de.hhinc00;
             }
 
         });
