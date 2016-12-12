@@ -20,7 +20,7 @@ StackedAreaChart = function(_parentElement, _data, _keys,_colorScale){
  */
 
 StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
-    console.log(this.parentElement);
+    //console.log(this.parentElement);
     document.getElementById(this.parentElement).innerHTML = "";
     var vis = this;
     vis.colorScale.domain(vis.keys);
@@ -28,7 +28,7 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
     var selectedData = vis.data.filter(function(d){
         return ((d.Year>=start_yr)&(d.Year<=end_yr))
     });
-    console.log(selectedData);
+    //console.log(selectedData);
     var transposedData = dataCategories.map(function(name) {
         return {
             name: name,
@@ -37,7 +37,7 @@ StackedAreaChart.prototype.initVis = function(start_yr,end_yr){
             })
         };
     });
-    console.log(transposedData);
+    //console.log(transposedData);
     var stack = d3.layout.stack()
         .values(function(d) { return d.values; });
     vis.stackedData = stack(transposedData);
