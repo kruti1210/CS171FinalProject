@@ -10,13 +10,13 @@ div {
 */
 
 /** New styles added here **/
-.stacked-area-chart{
+#stacked-area-chart{
     float: right;
 }
-.stacked-area-chart-sub{
+#stacked-area-chart-sub{
     float: right;
 }
-.timeline{
+#timeline{
     float: right;
 }
 .container {
