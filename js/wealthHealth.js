@@ -51,7 +51,7 @@ d3.csv("data/le_wealth.csv", function(error, data) {
     males.sort(function(a, b) {
         return a.pctile - b.pctile;
     });
-    console.log(males);
+    //console.log(males);
     x.domain([1, 100]);
     y.domain(d3.extent(alldata, function(d) { return d.le_raceadj; }));
 
