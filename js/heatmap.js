@@ -66,14 +66,6 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
         .attr("transform", function(d, i) { return ("rotate(300," + (i*gridSize + 30) + ",65)"); })
         .attr("class", "categoryLabel mono axis-category");
 
-    /*var categoryText = heatmap_svg.selectAll(".categoryText")
-        .data(categories)
-        .enter().append("text")
-        .text(function(d,i) {return "Category " + (i+1) + ": " + d; })
-        .attr("x", 170)
-        .attr("y", function(d, i) { return i* gridSize/2 + 7; })
-        .attr("class", "categoryText mono");*/
-
     var cards = heatmap_svg.selectAll(".card")
         .data(data, function(d) { return d.State_num + ":" + d.Category_num; });
 
