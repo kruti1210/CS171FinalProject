@@ -36,14 +36,14 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
     for (i = 0; i < 50; i++) {
         states_feeder.push(data[i]);
     }
-    console.log(states_feeder);
+    //console.log(states_feeder);
     states_feeder.sort(function(a, b) { return a.State_num - b.State_num; });
 
     for (i = 0; i < states_feeder.length; i++) {
         states.push(states_feeder[i].State);
     }
 
-    console.log(states);
+    //console.log(states);
 
     var stateLabels = heatmap_svg.selectAll(".stateLabel")
         .data(states)
@@ -135,5 +135,5 @@ d3.csv("data/Heatmap2.csv", function(error, data) {
         .attr("y", 178)
         .text("Worst performing states (fourth quartile)");
 
-    console.log(data);
+    //console.log(data);
 });
