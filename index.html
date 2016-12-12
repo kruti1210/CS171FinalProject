@@ -102,8 +102,9 @@
 			<div class="col-md-9">
 				<div class="user-control">
 					<select id="vis3b-options" class="form-control styled-select" onchange="updateChoropleth()">
-						<option value="lefemale">Female Values</option>
-						<option value="lemale">Male Values</option>
+						<option value="lefemale">Female Life Expectancy</option>
+						<option value="lemale">Male Life Expectancy</option>
+						<option value="hhinc00">Mean Household Income</option>
 					</select>
 				</div>
 
@@ -113,10 +114,10 @@
 
 				<div id = "vis-3b-table">
 					<table>
-						<h2 id="state_name">State</h2>
+						<h2 id="county_name">County</h2>
 						<tr>
-							<th>County:</th>
-							<td id="county_name"></td>
+							<th>State:</th>
+							<td id="state_name"></td>
 						</tr>
 						<tr>
 							<th>Female Life Expectancy:</th>
@@ -129,6 +130,10 @@
 						<tr>
 							<th>Most Similar Country:</th>
 							<td id="le_country"></td>
+						</tr>
+						<tr>
+							<th>Mean Household Income:</th>
+							<td id="le_income"></td>
 						</tr>
 					</table>
 				</div>
