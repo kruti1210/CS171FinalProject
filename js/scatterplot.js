@@ -169,7 +169,7 @@ function drawScatter(data) {
         .attr("y", 115)
         .style("text-anchor", "end")
         .text("to population size");
-    console.log(data);
+    //console.log(data);
 }
 
 function displayDetails (d) {
