@@ -74,7 +74,7 @@ d3.csv("data/le_wealth.csv", function(error, data) {
         .text('Male')
         .attr('y',y(72))
         .attr('x',x(25))
-        .attr('fill','blue')
+        .attr('fill','green')
         .attr('font-size',32);
     svg.append('g')
         .append('text')
@@ -98,7 +98,7 @@ d3.csv("data/le_wealth.csv", function(error, data) {
 
     var lineGraphMales = svg.append("path")
         .attr("d", line(males))
-        .attr("stroke", "blue")
+        .attr("stroke", "green")
         .attr("stroke-width", 2)
         .attr("fill", "none")
         .attr("class", "linemales");
