@@ -71,6 +71,7 @@ function createVisualization (error, data) {
                 d.countyname = de.cz_name;
                 d.statename = de.statename;
                 d.closest_country = de.closest_country;
+             console.log(de);
             }
 
         });
@@ -158,7 +159,6 @@ function updateChoropleth() {
         document.getElementById("le_female").innerHTML = d.lefemale;
         document.getElementById("le_male").innerHTML = d.lemale;
      document.getElementById("le_country").innerHTML = d.closest_country;
-     console.log(d);
     });
 
 
