@@ -181,36 +181,43 @@ function displayDetails (d) {
         .text(d.State);
 
     svg3.append("text")
+        .attr("class", "details")
         .attr("x", 10)
         .attr("y", 35)
         .text("Population: " + d.Population + " people");
 
     svg3.append("text")
+        .attr("class", "details")
         .attr("x", 10)
         .attr("y", 55)
         .text("Active physicians: " + d.Active_Physicians);
 
     svg3.append("text")
+        .attr("class", "details")
         .attr("x", 10)
         .attr("y", 70)
         .text(" per 100,000 population");
 
     svg3.append("text")
+        .attr("class", "details")
         .attr("x", 10)
         .attr("y", 90)
         .text("Hospital beds: " + d.Hospital_Bed_Density);
 
     svg3.append("text")
+        .attr("class", "details")
         .attr("x", 10)
         .attr("y", 105)
         .text(" per 100,000 population");
 
     svg3.append("text")
+        .attr("class", "details")
         .attr("x", 10)
         .attr("y", 125)
         .text("Emergency room wait time:");
 
     svg3.append("text")
+        .attr("class", "details")
         .attr("x", 10)
         .attr("y", 140)
         .text(d.Wait_Time + " minutes");
