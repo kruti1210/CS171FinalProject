@@ -156,6 +156,7 @@ function updateChoropleth() {
         document.getElementById("county_name").innerHTML = d.countyname;
         document.getElementById("le_female").innerHTML = d.lefemale;
         document.getElementById("le_male").innerHTML = d.lemale;
+     document.getElementById("le_country").innerHTML = d.closest_country;
     });
 
 
