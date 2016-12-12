@@ -13,6 +13,10 @@ div {
 
 .container {
     font-family: 'Roboto', sans-serif;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    width: 100%;
 }
 
 p {
@@ -48,7 +52,7 @@ p {
 #img1-placeholder,
 #img2-placeholder {
     width: 100%;
-    height: 600px;
+    height: auto;
     opacity: .7;
     margin-top: 20px;
 }
@@ -62,7 +66,7 @@ p {
 .quote {
     font-family: 'Shrikhand', cursive;
     position: absolute;
-    top: 200px;
+    top: 250px;
     left: 220px;
     width: 60%;
     background-color: rgba(175, 188, 203, 0.6);
@@ -198,6 +202,11 @@ Color scheme from https://startbootstrap.com/template-overviews/scrolling-nav/*/
 
 .state {
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+#details {
+    font-family: 'Roboto', sans-serif;
 }
 
 .dot:hover {
@@ -205,7 +214,6 @@ Color scheme from https://startbootstrap.com/template-overviews/scrolling-nav/*/
 }
 
 #scatter-x, #scatter-y {
-    width: 40%;
     float: left;
 }
 
@@ -222,16 +230,21 @@ rect.bordered {
 
 text.mono {
     font-size: 8pt;
-    font-family: Consolas, courier;
-    fill: #aaa;
+    font-family: 'Roboto', sans-serif;
 }
 
 text.axis-category {
     fill: #000;
+    font-family: 'Roboto', sans-serif;
 }
 
 text.axis-state {
     fill: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card:hover {
+    opacity: 0.5;
 }
 
 /* CSS for Vis 3b*/
@@ -318,4 +331,39 @@ th, td {
     stroke: #fff;
     fill-opacity: .125;
     shape-rendering: crispEdges;
+}
+
+.categoryLabel {
+    text-anchor: start;
+}
+
+/****************/
+/*   TOOLTIPS   */
+/****************/
+
+.d3-tip {
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    pointer-events: none;
+}
+
+.d3-tip.n:after {
+    content: "\25BC";
+    margin: -3px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
 }
