@@ -70,6 +70,7 @@ function createVisualization (error, data) {
                 d.lemale = de.le_male;
                 d.countyname = de.cz_name;
                 d.statename = de.statename;
+                d.closest_country = de.closest_country;
             }
 
         });
