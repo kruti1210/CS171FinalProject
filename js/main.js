@@ -33,7 +33,7 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 }; //http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
 d3.csv("data/nhe2014.csv", function(data) {
-    console.log(data);
+    //console.log(data);
     for(i = 1960;i<=2014;i++){
         allData.push({Year:i})
     }
@@ -42,7 +42,7 @@ d3.csv("data/nhe2014.csv", function(data) {
             d[d_1['Expenditure Amount (Millions)'].trim()] = +d_1[d.Year].replaceAll(',','')||0
         })
     });
-    console.log(allData);
+    //console.log(allData);
     timeline = new Timeline("timeline", allData);
     areachart = new StackedAreaChart("stacked-area-chart",allData,general_keys,d3.scale.category10());
 
