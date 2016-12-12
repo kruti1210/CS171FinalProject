@@ -18,7 +18,6 @@
 
 p {
     font-family: 'Raleway', sans-serif;
-    padding:5px;
 }
 
 .bucket-title {
@@ -99,7 +98,6 @@ Code help for positioning text over image from: https://css-tricks.com/text-bloc
     background-color: #e1e8f0;
     opacity: .4;
     text-align: center;
-    padding: 5px;
 }
 
 #vis3-placeholder {
@@ -197,7 +195,6 @@ Color scheme from https://startbootstrap.com/template-overviews/scrolling-nav/*/
 
 .scatter {
     float: left;
-    padding: 5px;
 }
 
 .state {
@@ -303,7 +300,6 @@ th, td {
 #access-info {
     text-align: center;
     width: 40%;
-    padding: 5px;
 }
 .container-fluid {
     padding-right: 30px;
