@@ -10,7 +10,15 @@ div {
 */
 
 /** New styles added here **/
-
+.stacked-area-chart{
+    float: right;
+}
+.stacked-area-chart-sub{
+    float: right;
+}
+.timeline{
+    float: right;
+}
 .container {
     font-family: 'Roboto', sans-serif;
     margin-left: 0px;
