@@ -274,7 +274,7 @@ th, td {
 }
 
 #vis-3b-table {
-    margin-top: 200px;
+    margin-top: 20px;
     padding: 5px;
 }
 
@@ -364,4 +364,9 @@ th, td {
     top: 100%;
     left: 0;
     text-align: center;
+}
+
+
+.each-page {
+    height: 100vh;
 }
