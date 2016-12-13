@@ -127,8 +127,8 @@ function createVisualization (error, data, data2, data3) {
         div.html(
             "Country: " + d.countryName+ "<br/>" +
             "Life Expectancy: " + d.le2013+ "<br/>")
-            .style("left", (d3.event.pageX - 250) + "px")
-            .style("top", (d3.event.pageY - 930) + "px");
+            .style("left", (d3.event.pageX - 150) + "px")
+            .style("top", (d3.event.pageY - 1550) + "px");
     })
         .on("mouseout", function() {
             d3.select(this)
