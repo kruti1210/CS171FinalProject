@@ -2,7 +2,7 @@
 Health Inequality in the United States
 <br>Julie Castrillon, Harrison Chase, Kruti Vora
 
-Project URL: kruti1210.github.io
+<b>Project URL:</b> kruti1210.github.io
 <br><b>Screencast video URL:</b> https://www.youtube.com/watch?v=xi-aIczbKUc
 <br><b>Process Book URL:</b> https://docs.google.com/a/college.harvard.edu/document/d/1h8jhye84esBVVVyxDgLwc8HMFTB8R6ZymAiPa1YOG00/edit?usp=sharing
 <br><b>GitHub repository:</b> https://github.com/kruti1210/kruti1210.github.io
